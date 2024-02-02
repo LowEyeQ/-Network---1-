@@ -297,6 +297,6 @@ man arp
 
 
 ## บรรณานุกรม 
-https://www.cyberciti.biz/
+website : https://www.cyberciti.biz/
 
 chatgpt
