@@ -294,3 +294,8 @@ man ifconfig
 man nmcli
 man arp
 ```
+
+
+## บรรณานุกรม 
+https://www.cyberciti.biz/
+chatgpt
