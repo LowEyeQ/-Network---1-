@@ -298,4 +298,5 @@ man arp
 
 ## บรรณานุกรม 
 https://www.cyberciti.biz/
+
 chatgpt
