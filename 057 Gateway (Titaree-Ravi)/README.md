@@ -57,5 +57,9 @@ Netstat จะแสดงการเชื่อมต่อเครือข
 
 ## อื่นๆที่น่าสนใจ
 
-### Reference 
+### Reference
+https://www.lions-wing.net/lessons/networking-1/schroder_-_linux_networking_cookbook_oreilly_2008.pdf?fbclid=IwAR0yWYnolkFhIrIvvNV5EnMBDn2Ys0Pppo55iK0tE7rj02_17-igKMy-ufU
 https://www.howtouselinux.com/post/linux-command-get-network-gateway
+https://access.redhat.com/documentation/th-th/red_hat_enterprise_linux/6/html/deployment_guide/s1-networkscripts-static-routes
+https://www.cyberciti.biz/faq/how-to-find-gateway-ip-address/
+https://www.geeksforgeeks.org/route-command-in-linux-with-examples/
