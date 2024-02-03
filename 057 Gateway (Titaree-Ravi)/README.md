@@ -21,15 +21,18 @@ Gateway บน Linux ทำงานโดยใช้หลักการข�
 ```ip route``` หรือ ```ip r``` เมื่อรันคำสั่ง ip route โดยไม่ใส่ arguments ใดๆ หรือจะใช้ arguments ```show``` จะแสดงตารางเส้นทางปัจจุบัน รวมถึงข้อมูลเกี่ยวกับ network destinations, the gateway, and the network interface associated กับเส้นทางแต่ละเส้นทาง
 
 ![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/20200512170105/To-get-details-of-the-kernel-IP-routing-table-using-ip-command1.png)
+
 source : https://www.geeksforgeeks.org/route-command-in-linux-with-examples/
 
 ## วิธีตรวจสอบที่อยู่ gateway ip ด้วย route command บน Linux
 คำสั่ง ```route``` สามารถใช้ตรวจสอบที่อยู่ gateway ip
 ![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/20200512153722/To-display-the-IP-kernel-routing-table.png)
+
 source : https://www.geeksforgeeks.org/route-command-in-linux-with-examples/
 
 สามารถแสดงตารางเส้นทางในรูปแบบตัวเลขเต็ม โดย ```route -n```
 ![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/20200512153837/To-display-routing-table-in-full-numeric-form.png)
+
 source : https://www.geeksforgeeks.org/route-command-in-linux-with-examples/
 
 จะแสดงเส้นทางทั้งหมดที่กำหนดค่าในระบบ 
