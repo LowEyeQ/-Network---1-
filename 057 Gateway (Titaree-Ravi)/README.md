@@ -17,15 +17,18 @@ Gateway บน Linux ทำงานโดยใช้หลักการข�
 ```ip route``` หรือ ```ip r``` เมื่อรันคำสั่ง ip route โดยไม่ใส่ arguments ใดๆ หรือจะใช้ arguments ```show``` จะแสดงตารางเส้นทางปัจจุบัน รวมถึงข้อมูลเกี่ยวกับ network destinations, the gateway, and the network interface associated กับเส้นทางแต่ละเส้นทาง
 
 ![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/20200512170105/To-get-details-of-the-kernel-IP-routing-table-using-ip-command1.png)
+
 source : https://www.geeksforgeeks.org/route-command-in-linux-with-examples/
 
 ## วิธีตรวจสอบที่อยู่ Gateway ip ด้วย route command บน Linux
 คำสั่ง ```route``` สามารถใช้ตรวจสอบที่อยู่ gateway ip
 ![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/20200512153722/To-display-the-IP-kernel-routing-table.png)
+
 source : https://www.geeksforgeeks.org/route-command-in-linux-with-examples/
 
 สามารถแสดงตารางเส้นทางในรูปแบบตัวเลขเต็ม โดย ```route -n```
 ![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/20200512153837/To-display-routing-table-in-full-numeric-form.png)
+
 source : https://www.geeksforgeeks.org/route-command-in-linux-with-examples/
 
 จะแสดงเส้นทางทั้งหมดที่กำหนดค่าในระบบ 
@@ -35,6 +38,7 @@ G บ่งบอกว่านั่นคือ Gateway
 ## วิธีหา Gateway ip ด้วยคำสั่ง netstat ใน Linux
 คำสั่ง ```netstat``` ใช้ดูทุกการเชื่อมต่อเครือข่ายที่ทำงานบนระบบเพื่อหา Gateway โดย Gateway จะปรากฎในคอลัมน์ "Gateway"
 ![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/kernel.png)
+
 source : https://www.geeksforgeeks.org/netstat-command-linux/
 
 Netstat จะแสดงการเชื่อมต่อเครือข่ายทั้งหมดที่ทำงานและสถานะของพวกมัน
@@ -54,6 +58,7 @@ Netstat จะแสดงการเชื่อมต่อเครือข
 จะใช้คำสั่งต่อไปนี้: ```route add defualt gw 192.168.1.1```
 
 ![Alt text](https://lintut.com/wp-content/uploads/2015/01/Add-Default-Gateway.png)
+
 source : https://lintut.com/how-to-use-route-command-on-rhelcentos-linux/
 
 ## วิธีการกำหนดค่า Gateway Linux ด้วย Iptables
