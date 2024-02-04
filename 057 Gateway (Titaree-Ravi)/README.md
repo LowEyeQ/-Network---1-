@@ -125,7 +125,7 @@ Gateway เริ่มต้นคือ Router เครือข่ายท�
 
 Static route คือเส้นทางที่ได้รับการกำหนดค่าด้วยผู้ใช้
 
-### Reference
+## Reference
 Book
 - https://www.lions-wing.net/lessons/networking-1/schroder_-_linux_networking_cookbook_oreilly_2008.pdf?fbclid=IwAR0yWYnolkFhIrIvvNV5EnMBDn2Ys0Pppo55iK0tE7rj02_17-igKMy-ufU
 
