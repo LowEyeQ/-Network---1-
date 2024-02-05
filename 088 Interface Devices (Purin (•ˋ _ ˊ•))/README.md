@@ -3,7 +3,7 @@
 
 ## Linux Show / Display Available Network Interfaces
 
-สามารถใช้คำสั่งต่อไปนี้เพื่อดู network interfaces ทั้งหมดในระบบปฏิบัติการ Linux:
+* สามารถใช้คำสั่งต่อไปนี้เพื่อดู network interfaces ทั้งหมดในระบบปฏิบัติการ Linux:
 
 ```bash
 ip command
