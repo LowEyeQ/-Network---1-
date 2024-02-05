@@ -123,3 +123,10 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation
 ```
 
 ```
+
+
+
+
+https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-55/Layer-1-and-Switch-Ports/Interface-Configuration-and-Management/
+https://ioflood.com/blog/lspci-linux-command/
+https://readme.so/editor
