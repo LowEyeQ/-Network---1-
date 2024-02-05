@@ -1,302 +1,251 @@
-
 # Interface device
 
-## Linux Show / Display Available Network Interfaces
+![Alt text](https://cdn.pixabay.com/photo/2016/05/25/18/18/penguin-1415562_1280.png)
+source: [linux image](https://pixabay.com/th/vectors/%E0%B9%80%E0%B8%9E%E0%B8%99%E0%B8%81%E0%B8%A7%E0%B8%99-tux-%E0%B8%AA%E0%B8%95%E0%B8%A7-%E0%B8%99%E0%B8%81-%E0%B8%99%E0%B8%B2%E0%B8%A3%E0%B8%81-1415562/)
 
-* สามารถใช้คำสั่งต่อไปนี้เพื่อดู network interfaces ทั้งหมดในระบบปฏิบัติการ Linux:
+## บทบาทหน้าที่
 
-```bash
-ip command
-```
-คำสั่งนี้ใช้แสดงหรือจัดการเรื่อง routing, devices, policy routing, และ tunnels
-```bash
-netstat command 
-```
-ถูกใช้เพื่อ display network connections, routing tables, interface statistics, masquerade connections และ multicast memberships
-```bash
-ifconfig command
-```
-ถูกใช้เพื่อ display หรือ configure network interface
-```bash
-nmcli command
-```
-คำสั่งเพื่อ show หรือ configure network interface ในระบบปฏิบัติการ Linux
-```bash
-tcpdump command
-```
-print รายการของ network interface ที่มีในระบบ
+interface device มีบทบาทและหน้าที่สำคัญในการเชื่อมต่อระหว่างซอฟต์แวร์และฮาร์ดแวร์
 
-### รายชื่อ Network Interfaces โดยใช้ ip command บน Linux
-พิมพ์คำสั่งต่อไปนี้แล้วกด Enter
-```bash
-ip link show
+#### ต่อไปนี้คือบางหน้าที่หลักของ interface device ใน Linux
+1. การเชื่อมต่อระบบปฏิบัติการกับอุปกรณ์ฮาร์ดแวร์: Interface device เป็นตัวกลางที่ช่วยให้ระบบปฏิบัติการ Linux สามารถติดต่อและทำงานกับอุปกรณ์ฮาร์ดแวร์ต่าง ๆ ได้ เช่น การเชื่อมต่อกับเครือข่าย (Network Interface Card - NIC), การใช้งาน USB devices, หรือการจัดการกับอุปกรณ์เกี่ยวกับเสียงและวีดีโอ
+
+2. การจัดการไดรเวอร์ (Driver Management): Interface device ใน Linux มักต้องใช้ไดรเวอร์เพื่อให้ระบบปฏิบัติการสามารถทำงานกับฮาร์ดแวร์ได้อย่างถูกต้อง การจัดการไดรเวอร์นี้เป็นหน้าที่สำคัญของ interface device เพื่อให้ระบบสามารถรู้จักและปรับให้กับอุปกรณ์ต่าง ๆ ที่เชื่อมต่อ
+
+3. การจัดการการสื่อสาร (Communication Management): Interface device มีหน้าที่ในการจัดการการสื่อสารระหว่างซอฟต์แวร์และฮาร์ดแวร์ นอกจากนี้ยังรวมถึงการจัดการข้อมูลที่ได้รับและส่งออกจากระบบ
+
+4. การทำงานร่วมกับ Kernel: Interface device ทำงานร่วมกับ Linux Kernel เพื่อให้ระบบปฏิบัติการสามารถเข้าถึงและควบคุมฮาร์ดแวร์ได้อย่างเหมาะสม
+
+5. การรับรู้เหตุการณ์ (Event Handling): Interface device สามารถรับรู้เหตุการณ์ที่เกิดขึ้นในระบบ เช่น การกดปุ่ม, การตรวจจับอุปกรณ์ที่เสียหาย, หรือเหตุการณ์อื่น ๆ ที่สำคัญ
+
+6. การจัดการพลังงาน (Power Management): บาง interface device มีบทบาทในการจัดการพลังงานของอุปกรณ์ฮาร์ดแวร์ เพื่อประหยัดพลังงานหรือการจัดการในรูปแบบอื่น ๆ
+
+## พื้นฐานและหลักการทำงาน
+
+พื้นฐานหรือหลักการทำงานของ interface device ใน Linux มีลักษณะดังนี้:
+
+**Device Files:**
+* Interface device มักถูกแทนด้วย device file ในระบบไฟล์ของ Linux, ซึ่งประกอบด้วย `/dev` และมักจะมีชื่อเฉพาะสำหรับแต่ละอุปกรณ์ เช่น `/dev/sda` สำหรับ hard drive หรือ `/dev/ttyUSB0` สำหรับ USB serial device
+
+**Kernel Modules:**
+- บาง interface device ต้องใช้ kernel module เพื่อทำงานในระบบ โมดูลเหล่านี้จะถูกโหลดหรือถูกสร้างขึ้นเมื่อ interface device ถูกเชื่อมต่อกับระบบ
+
+**Kernel Space vs. User Space:**
+* การทำงานของ interface device มักเกิดใน kernel space และ user space ของระบบปฏิบัติการ Linux โดย kernel space มีการทำงานที่ใกล้เคียงกับฮาร์ดแวร์ และ user space มีการทำงานที่เกี่ยวข้องกับแอปพลิเคชันและการให้บริการสู่ผู้ใช้
+
+**Interrupts:**
+- Interface device สามารถใช้ interrupts เพื่อแจ้งเหตุการณ์หรือสถานะของอุปกรณ์กับระบบ ซึ่งทำให้ kernel สามารถตอบสนองได้อย่างรวดเร็ว
+
+**File Operations:**
+- แต่ละ interface device มี file operations เฉพาะที่ kernel สามารถเรียกใช้เพื่อทำงานกับอุปกรณ์นั้น ๆ เช่น read, write, open, close, ioctl (input output control) ฯลฯ
+
+**Device Drivers:**
+- Interface device มักจะต้องมี device driver ที่เป็นโปรแกรมที่ทำหน้าที่ควบคุมการทำงานของอุปกรณ์นั้น ๆ บนระบบปฏิบัติการ Linux
+
+**Sysfs and Procfs:**
+- Linux มี sysfs และ procfs ที่ให้ข้อมูลเกี่ยวกับอุปกรณ์และการทำงานของระบบ ผู้ใช้หรือแอปพลิเคชันสามารถอ่านหรือแก้ไขค่าต่าง ๆ ที่เกี่ยวข้องกับ interface device ผ่าน sysfs หรือ procfs
+
+**File Descriptors:**
+- Interface device มักถูกเปิดและใช้งานผ่าน file descriptors ซึ่งเป็นเลขที่กำหนดให้กับไฟล์ที่เปิดใช้งานการทำงานของ interface device ใน Linux มีความซับซ้อนและการทำงานที่ทันสมัย เนื่องจากระบบปฏิบัติการ Linux ได้รับการพัฒนาอย่างต่อเนื่องและรองรับหลายประเภทของอุปกรณ์และการเชื่อมต่อต่าง ๆ ในโลกของฮาร์ดแวร์
+
+## เริ่มกันที่ Lspci Command
+นี่คือตัวอย่างทั่วไป
 ```
-นี่คือสิ่งที่แสดงผล(ชื่อของ network device อาจแตกต่างกันไปบนเซิร์ฟเวอร์ของคุณหรือบนคลาวด์เซิร์ฟเวอร์):
-```bash
- 1: lo: mtu 16436 qdisc noqueue state UNKNOWN 
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
- 2: eth0: mtu 1500 qdisc mq state UP qlen 1000
-    link/ether b8:ac:6f:65:31:e5 brd ff:ff:ff:ff:ff:ff
- 3: wlan0: mtu 1500 qdisc mq state DOWN qlen 1000
-    link/ether 00:21:6a:ca:9b:10 brd ff:ff:ff:ff:ff:ff
- 4: vboxnet0: mtu 1500 qdisc noop state DOWN qlen 1000
-    link/ether 0a:00:27:00:00:00 brd ff:ff:ff:ff:ff:ff
- 5: pan0: mtu 1500 qdisc noop state DOWN 
-    link/ether c2:10:fa:55:8e:32 brd ff:ff:ff:ff:ff:ff
- 6: vmnet1: mtu 1500 qdisc pfifo_fast state UNKNOWN qlen 1000
-    link/ether 00:50:56:c0:00:01 brd ff:ff:ff:ff:ff:ff
- 7: vmnet8: mtu 1500 qdisc pfifo_fast state UNKNOWN qlen 1000
-    link/ether 00:50:56:c0:00:08 brd ff:ff:ff:ff:ff:ff
-11: ppp0: mtu 1496 qdisc pfifo_fast state UNKNOWN qlen 3
-    link/ppp 
+lspci
+
 ```
-1. lo - Loopback interface
-2. eth0 - Ethernet network interface บน Linux บนระบบปฏิบัติการที่เป็น Linux รุ่นใหม่นั้น, eth0 อาจถูกเปลี่ยนชื่อเป็น enp0s31f6 ตามที่ไดรเวอร์กำหนด
-3. wlan0 - Wireless network interface บน Linux, WiFi device อาจถูกเปลี่ยนชื่อเป็น wlp82s0 ตามที่ไดรเวอร์กำหนด
-4. ppp0 - Point to Point Protocol network interface (PPP) ที่สามารถใช้งานได้กับโมเด็ม Dial-Up, การเชื่อมต่อ VPN แบบ PPTP, หรือโมเด็มไร้สาย USB 3G
-5. vboxnet0, vmnet1, vmnet8 - Virtual machine interface ทำงานในโหมดบริดจ์ (Bridge Mode) หรือโหมด NAT (Network Address Translation) บน Linux
-### show / display available network interface บน Linux โดยใช้ nmcli
-สามารถแสดงรายการอุปกรณ์ที่ใช้งานได้ ( list available devices) และสถานะ (status) ของพวกเขาบน Linux ได้ด้วยการรันคำสั่ง:
-```bash
-nmcli device status
+ในตัวอย่างเราใช้ lspci ปราศจาก ```options``` หรือ ```flag``` คำสั่งนีจะแสดง list ของอุปกรณ์ PCI ทั้งหมด พร้อมกับประเภทและรายละเอียดผู้ผลิต
+
+### การใช้งานขั้นสูงของ Lspci
+
+|**Argument**	 | **Description** | 
+| :-------- | :------- | 
+| **-v** | แสดงผลลัพธ์อย่างละเอียด (verbose) โดยแสดงข้อมูลเพิ่มเติมเกี่ยวกับแต่ละอุปกรณ์ เช่น ```lspci -nn``` |
+|**-nn**|แสดงทั้ง vendor และ device code เช่น `lspci -nn`|
+|**-k**|แสดง kernel drivers ที่รับผิดชอบการจัดการกับแต่ละอุปกรณ์ เช่น `lspci -k`|
+|**-t**|แสดงอุปกรณ์ในรูปแบบของไดอะแกรมต้นไม เช่น `lspci -t`|
+|**-i**|ใช้ไฟล์ PCI ID ที่ระบุแทนที่จะใช้ค่าเริ่มต้น เช่น `lspci -i` หรือ `/path/to/pci.ids`|
+|**-d**|แสดงเฉพาะอุปกรณ์ที่มี vendor และ device ID ที่ระบุ เช่น `lspci -d 8086:100e`|
+|**-s**|แสดงเฉพาะอุปกรณ์ในบัสที่ระบุเช่น `lspci -s 00:02.0`|
+|**-x**|แสดงบางส่วนแรกของพื้นที่การกำหนดค่า เช่น `lspci -x`|
+|**-xxx**|แสดงพื้นที่การกำหนดค่าทั้งหมด (***เฉพาะ root เท่านั้น) เช่น `lspci -xxx`|
+|**-A**|ใช้วิธีการเข้าถึงที่ระบุเพื่ออ่านพื้นที่การกำหนดค่าฮาร์ดแวร์ของ PCI เช่น `lspci -A intel-conf1`|
+|**-D**|แสดงหมายเลขโดเมนเสมอ เช่น `lspci -D`|
+|**-F**|อ่านค่าการกำหนดค่าจากไฟล์ที่ระบุ เช่น `lspci -F dump.txt`|
+
+### การแสดงผลลัพธ์อย่างละเอียด
+**command**
 ```
-หรือ
-```bash
-nmcli connection show
+lspci -v
 ```
-![Alt text](https://www.linuxtechi.com/wp-content/uploads/2022/01/nmcli-connection-show.png)
-source : https://www.linuxtechi.com/configure-ip-with-nmcli-command-linux/
-### show ตารางของ network interfaces ทั้งหมดโดยใช้คำสั่ง netstat ใน Linux
-พิมพ์คำสั่ง netstat ต่อไปนี้:
-```bash
-netstat -i
+**output**
 ```
-นี่คือสิ่งที่แสดง:
-```bash
-Kernel Interface table
-Iface   MTU Met   RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
-eth0       1500 0   2697347      0      0 0       2630262      0      0      0 BMRU
-lo        16436 0      2840      0      0 0          2840      0      0      0 LRU
-ppp0       1496 0    102800      0      0 0         63437      0      0      0 MOPRU
-vmnet1     1500 0         0      0      0 0            49      0      0      0 BMRU
-vmnet8     1500 0         0      0      0 0            49      0      0      0 BMRU
+00:01.0 VGA compatible controller: NVIDIA Corporation GP106 [GeForce GTX 1060 6GB] (rev a1) (prog-if 00 [VGA controller])
+	Subsystem: Gigabyte Technology Co., Ltd GP106 [GeForce GTX 1060 6GB]
+	Flags: bus master, fast devsel, latency 0, IRQ 33
+	Memory at f6000000 (32-bit, non-prefetchable) [size=16M]
+	Memory at e0000000 (64-bit, prefetchable) [size=256M]
+	Memory at f0000000 (64-bit, prefetchable) [size=32M]
+	I/O ports at e000 [size=128]
+	[virtual] Expansion ROM at f7000000 [disabled] [size=512K]
+	Capabilities: <access denied>
+	Kernel driver in use: nvidia
+	Kernel modules: nvidiafb, nouveau, nvidia_drm, nvidia
 ```
-### ตรวจสอบ network interfaces บน Linux โดยใช้คำสั่ง tcpdump
-พิมพ์คำสั่ง tcpdump ต่อไปนี้ และสำหรับแต่ละ network interface ของ Linux จะปรากฎตัวเลขและ interface name โดยอาจมีคำอธิบายข้อความของ interface ตามนี้:
-```bash
-tcpdump --list-interfaces
+การใช้คำสั่ง ```lspci -v``` ใน Linux จะแสดงข้อมูลเกี่ยวกับอุปกรณ์ที่เชื่อมต่อผ่าน PCI bus โดยรายละเอียด ซึ่งประกอบด้วยข้อมูลเช่น vendor ID, device ID, ที่อยู่ของหน่วยความจำ, ข้อมูล I/O ports, และ driver ที่กำลังใช้งาน
+
+
+## ทางเลือกอื่นนอกจาก lspci Command
+นอกจากคำสั่ง ```lspci```แล้วยังมีเครื่องมือและคำสั่งทดแทนอื่นที่สามารถช่วยจัดการและแสดงรายการอุปกรณ์ PCI ใน Linux ได้
+###  lsusb Command
+**command**
 ```
-นี่คือสิ่งที่แสดง:
-```bash
-1.lxdbr0 [Up, Running]
-2.wg1 [Up, Running]
-3.enp0s31f6 [Up, Running]
+lsusb
+```
+**output**
+```
+Bus 002 Device 002: ID 045e:0773 Microsoft Corp.
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation
+Bus 001 Device 003: ID 04f2:b685 Chicony Electronics Co., Ltd
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation
+```
+คำสั่ง ```lsusb``` ใน Linux ถูกใช้เพื่อแสดงรายการของอุปกรณ์ USB ที่เชื่อมต่อกับระบบการใช้คำสั่งนี้จะช่วยในการตรวจสอบว่าอุปกรณ์ USB ต่าง ๆ ถูกตรวจพบและเชื่อมต่อกับระบบอย่างไร รายการที่แสดงอาจรวมถึงข้อมูลเชิงละเอียดเกี่ยวกับผู้ผลิต, รหัสผลิตภัณฑ์, และรายละเอียดเพิ่มเติมของอุปกรณ์ USB
+
+### lshw Command
+**command**
+```
+lshw
+```
+**output**
+```
+  *-cpu                     
+       description: CPU
+       product: Intel Core i7-7700K
+       vendor: Intel Corp.
+       physical id: 1
+       bus info: cpu@0
+       version: Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz
+       serial: To Be Filled By O.E.M.
+       slot: SOCKET 0
+       size: 4200MHz
+       capacity: 4200MHz
+       width: 64 bits
+       clock: 100MHz
+       capabilities: x86-64 fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+       configuration: cores=4 enabledcores=4 threads=8
+  *-memory
+       description: System Memory
+       physical id: 2
+       slot: System board or motherboard
+       size: 16GiB
+     *-bank:0
+          description: DIMM DDR4 Synchronous 2400 MHz (0.4 ns)
+          product: CMK16GX4M1A2400C14
+          vendor: Unknown
+          physical id: 0
+          serial: 00000000
+          slot: ChannelA-DIMM0
+          size: 16GiB
+          width: 64 bits
+          clock: 2400MHz (0.4ns)
+     *-bank:1
+          description: [empty]
+          product: [empty]
+          vendor: [empty]
+          physical id: 1
+          serial: [empty]
+          slot: ChannelB-DIMM0
+  ...
+
+```
+lshw คือคำสั่งที่ใช้สำหรับแสดงข้อมูลเกี่ยวกับ hardware คำสั่งนี้ช่วยให้ผู้ใช้งานสามารถดูข้อมูลเกี่ยวกับ CPU, RAM , การ์ดกราฟิก, การ์ดเสียง, ฮาร์ดไดรฟ์, และอุปกรณ์ฮาร์ดแวร์อื่น ๆ ที่เชื่อมต่อกับระบบของพวกเขา
+
+การใช้คำสั่ง lshw มักช่วยในการตรวจสอบข้อมูลฮาร์ดแวร์เพื่อการ debug , การแก้ไขปัญหาทางฮาร์ดแวร์, หรือการตรวจสอบสเปกของระบบ สามารถใช้คำสั่งนี้เพื่อรับข้อมูลที่ละเอียดเกี่ยวกับฮาร์ดแวร์ทั้งหมดที่มีบนระบบได้
+
+## การใช้คำสั่ง lspci เพื่อตรวจสอบข้อผิดพลาดหรือปัญหาที่เกี่ยวข้องกับฮาร์ดแวร์บนระบบ Linux
+
+
+### Permission Denied Error
+ข้อผิดพลาดที่คุณอาจพบบ่อยเมื่อใช้คำสั่ง lspci คือข้อผิดพลาด 'Permission denied' หรือ 'การปฏิเสธสิทธิ์' นั่นล้วนเป็นเรื่องที่เกิดขึ้นเมื่อคุณพยายามเข้าถึงข้อมูลฮาร์ดแวร์โดยไม่มีสิทธิ์ที่จำเป็น.
+
+ต่อไปนี้คือตัวอย่างของข้อผิดพลาดนี้:
+
+command
+```
+lspci -v
+```
+output
+```
+lspci: Unable to open /proc/bus/pci
+lspci: Cannot find any working access method.
+```
+
+ในตัวอย่างนี้, คำสั่ง lspci -v ล้มเหลวเนื่องจากไม่มีสิทธิ์ที่จำเป็นในการเข้าถึงไดเรกทอรี /proc/bus/pci การแก้ไขปัญหานี้คือการรันคำสั่ง lspci ด้วย sudo:
+
+command
+```
+sudo lspci -v
+```
+output
+```
+00:00.0 Host bridge: Intel Corporation 8th Gen Core Processor Host Bridge/DRAM Registers (rev 07)
+        Subsystem: Lenovo Device 3801
+        Flags: bus master, fast devsel, latency 0
+        Capabilities: <access denied>
 ...
 ```
-> **_NOTE:_**  คำสั่ง ifconfig ถูกประกาศเลิกใช้บน Linux เพื่อสนับสนุนคำสั่ง ip ดังนั้น, คุณอาจได้รับข้อผิดพลาดที่อ่านว่า: "bash: ifconfig: command not found."
+run คำสั่ง lspci ด้วยสิทธิ์ root ซึ่งทำให้มันสามารถเข้าถึงไดเรกทอรีที่จำเป็นและแสดงผลลัพธ์แบบ verbose ได้
 
-พิมพ์คำสั่ง ifconfig ต่อไปนี้:
-```bash
-/sbin/ifconfig -a
-```
-ผลลัพธ์ตัวอย่าง:
-```bash
-eth0      Link encap:Ethernet  HWaddr b8:ac:6f:65:31:e5  
-          inet addr:192.168.2.100  Bcast:192.168.2.255  Mask:255.255.255.0
-          inet6 addr: fe80::baac:6fff:fe65:31e5/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:2697529 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:2630541 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000 
-          RX bytes:2159382827 (2.0 GiB)  TX bytes:1389552776 (1.2 GiB)
-          Interrupt:17 
- 
-lo        Link encap:Local Loopback  
-          inet addr:127.0.0.1  Mask:255.0.0.0
-          inet6 addr: ::1/128 Scope:Host
-          UP LOOPBACK RUNNING  MTU:16436  Metric:1
-          RX packets:2849 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:2849 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:0 
-          RX bytes:2778290 (2.6 MiB)  TX bytes:2778290 (2.6 MiB)
- 
-ppp0      Link encap:Point-to-Point Protocol  
-          inet addr:10.1.3.105  P-t-P:10.0.31.18  Mask:255.255.255.255
-          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1496  Metric:1
-          RX packets:102800 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:63437 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:3 
-          RX bytes:148532544 (141.6 MiB)  TX bytes:4425518 (4.2 MiB)
- 
-vmnet1    Link encap:Ethernet  HWaddr 00:50:56:c0:00:01  
-          inet addr:192.168.47.1  Bcast:192.168.47.255  Mask:255.255.255.0
-          inet6 addr: fe80::250:56ff:fec0:1/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:49 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000 
-          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
- 
-vmnet8    Link encap:Ethernet  HWaddr 00:50:56:c0:00:08  
-          inet addr:172.16.232.1  Bcast:172.16.232.255  Mask:255.255.255.0
-          inet6 addr: fe80::250:56ff:fec0:8/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:49 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000 
-          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
-```
-### จะดู routing table บน Linux ได้อย่างไร?
-ใช้ ip command ดังนี้:
-```bash
-ip r
-```
-ผลลัพธ์ตัวอย่าง:
-```bash
-0.0.0.0/1 via 10.8.0.1 dev tun0 
-default via 192.168.2.254 dev enp6s0 proto static metric 100 
-10.8.0.0/24 dev tun0 proto kernel scope link src 10.8.0.2 
-128.0.0.0/1 via 10.8.0.1 dev tun0 
-139.59.1.155 via 192.168.2.254 dev enp6s0 
-169.254.0.0/16 dev virbr0 scope link metric 1000 linkdown 
-192.168.2.0/24 dev enp6s0 proto kernel scope link src 192.168.2.24 metric 100 
-192.168.122.0/24 dev virbr0 proto kernel scope link src 192.168.122.1 linkdown
-```
-### จะดูข้อมูล arp cache ที่เชื่อมต่อกับ NIC ของคุณบน Linux ได้ยังไง?
-Run arp command:
-```bash
-arp
-arp -a
-arp -e
-arp -n
-# On modern Linux distros use the ip command #
-ip neigh
-ip -s neigh
-```
-Outputs:
-```bash
-Address                  HWtype  HWaddress           Flags Mask            Iface
-centos7                  ether   00:01:c0:1c:09:4c   C                     enp6s0
-freebsd11-box            ether   00:01:c0:1c:09:4c   C                     enp6s0
-192.168.2.203            ether   00:01:c0:1c:09:4c   C                     enp6s0
-fw0-pfsense-sg-3100.swe  ether   00:08:a2:0d:05:41   C                     enp6s0
-192.168.2.205            ether   00:01:c0:1c:09:4c   C                     enp6s0
-192.168.2.202            ether   00:01:c0:1c:09:4c   C                     enp6s0
-```
-### จะแสดงรายการ network devices  ทั้งหมดที่เชื่อมต่อกับ PCI bus ใน Linux ได้อย่างไร
+### Incorrect or Unrecognized Command Options
+ปัญหาที่พบบ่อยคือการใช้ตัวเลือกคำสั่งที่ไม่ถูกต้องหรือไม่รู้จัก หากคุณใช้ตัวเลือกที่ lspci ไม่รู้จักมันจะแสดง error message
 
-ใช้คำสั่ง lspci ดังนี้:
-```bash
-sudo lspci
-# Filter out results using the "grep" or "egrep" #
-sudo lspci | grep -Ei 'eth|network|ethernet|wireless|wifi'
-```
-Outputs:
-```bash
-00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (7) I219-LM (rev 10)
-52:00.0 Network controller: Intel Corporation Wi-Fi 6 AX200 (rev 1a)
-```
-ดูเหมือนว่าฉันมีอุปกรณ์ Intel Ethernet (00:1f.6) และ Wifi (52:00.0) ที่เชื่อมต่อกับ PCI  bus ของฉัน
+ต่อไปนี้คือตัวอย่างของข้อผิดพลาดนี้:
 
-หากต้องการทราบข้อมูลเพิ่มเติมเกี่ยวกับอุปกรณ์เหล่านั้นและไดรเวอร์
-ลองใช้ตัวเลือก -vss {ID} ที่ lscpi command:
-```bash
-sudo lspci -vvs 00:1f.6
+command
 ```
-นี่คือสิ่งที่แสดง:
-```bash
-00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (7) I219-LM (rev 10)
-	Subsystem: Lenovo Ethernet Connection (7) I219-LM
-	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx+
-	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
-	Latency: 0
-	Interrupt: pin A routed to IRQ 178
-	Region 0: Memory at ee500000 (32-bit, non-prefetchable) [size=128K]
-	Capabilities: [c8] Power Management version 3
-		Flags: PMEClk- DSI+ D1- D2- AuxCurrent=0mA PME(D0+,D1-,D2-,D3hot+,D3cold+)
-		Status: D0 NoSoftRst+ PME-Enable- DSel=0 DScale=1 PME-
-	Capabilities: [d0] MSI: Enable+ Count=1/1 Maskable- 64bit+
-		Address: 00000000fee00998  Data: 0000
-	Kernel driver in use: e1000e
-	Kernel modules: e1000e
+lspci -z
 ```
-### วิธี list รายการ physically installed network cards ทั้งหมดใน Linux โดยใช้คำสั่ง lshw, inxi, หรือ hwinfo
+output
+```
+lspci: invalid option -- 'z'
+Usage: lspci [<switches>]
+```
+-z ไม่ได้รับการรับรองโดยคำสั่ง lspci ซึ่งทำให้มันแสดง error message เพื่อแก้ไขปัญหานี้ ควรตรวจสอบหน้าคู่มือของ lspci (`man lspci`) หรือใช้ตัวเลือก --help (`lspci --help`) เพื่อรับรายการของตัวเลือกที่ถูกต้อง.
 
-> **_ข้อกำหนดเบื้องต้น_**  โดยเริ่มต้น, คำสั่ง lshw, inxi, และ hwinfo อาจไม่ได้ถูกติดตั้งในระบบของคุณ ดังนั้น, ใช้คำสั่ง apk บน Alpine Linux, dnf command/yum command บน RHEL & co, apt command/apt-get command บน Debian, Ubuntu & co, zypper command บน SUSE/OpenSUSE, และ pacman command บน Arch Linux เพื่อติดตั้ง lshw, inxi, และ hwinfo
+### Best Practices and Optimization
+เมื่อใช้คำสั่ง lspci, มีบางแนวทางที่ดีที่ควรจำไว้:
 
-ก่อนอื่น, ติดตั้งเครื่องมือเหล่านี้ใน Debian หรือ Ubuntu Linux ของคุณโดยใช้คำสั่ง apt ตัวอย่างเช่น
-```bash
-sudo apt install lshw inxi hwinf
-```
-list NIC’s:
-```bash
-sudo hwinfo --short --netcard
-sudo lshw -C network -short
-sudo inxi -N
-```
-![Alt text](https://www.cyberciti.biz/media/new/faq/2010/01/How-to-List-Network-Interfaces-in-Linux.png)
-source: https://www.cyberciti.biz/
-### ใช้ /proc/net/dev เพื่อดู network interfaces ที่มีใน Linux
-/proc/net/dev เป็นไฟล์พิเศษที่มีข้อมูลเกี่ยวกับ network device status  ข้อมูลนี้รวมถึงจำนวนของแพ็กเก็ตที่รับและส่ง, จำนวนของข้อผิดพลาดและการชนกันที่เกิดขึ้น และสถิติพื้นฐานอื่น ๆ ใช้ "cat", "bat", "more", หรือ "less" เพื่อดู เช่น:
-```bash
-cat /proc/net/dev
-```
-"ผลลัพธ์ต่อไปนี้แสดงว่ามี network interfaces lo, eth0, และ wg0 บนเซิร์ฟเวอร์ WireGuard ของฉัน:"
+1. ใช้ command ที่ถูกต้องเสมอ: การใช้ตัวเลือกที่ไม่ถูกต้องหรือไม่รู้จักอาจทำให้เกิดข้อผิดพลาด ควรตรวจสอบหน้าคู่มือ (`man page`) ของ lspci หรือใช้ตัวเลือก --help หากไม่แน่ใจเกี่ยวกับตัวเลือกใด ๆ
 
-> **_WireGuard_**  เป็นโปรโตคอล VPN (Virtual Private Network) ที่ถูกออกแบบมาเพื่อให้ความง่ายและมีประสิทธิภาพสูง โดยพัฒนาขึ้นเป็น open-source project โดยนักพัฒนา Jason A. Donenfeld. WireGuard มีลักษณะเด่นด้านความง่ายในการติดตั้งและใช้งาน รวมถึงมีประสิทธิภาพที่ดีในการให้บริการการเชื่อมต่อทางเครือข่ายที่ปลอดภัยและรวดเร็ว
-```bash
-Inter-|   Receive                                                |  Transmit
- face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
-    lo:  164243    1526    0    0    0     0          0         0   164243    1526    0    0    0     0       0          0
-  eth0: 2372840589 2027484    0    0    0     0          0         0 2467369079 2428370    0    0    0     0       0          0
-   wg0: 203283936  601457  640    0    0   640          0         0 2201800868 1830420    0 1061    0     0       0          0
-```
-สามารถใช้คำสั่ง ls เพื่อแสดงข้อมูลเดียวกันโดยใช้ไดเรกทอรี /sys/class/net/ เช่นเดียวกัน:
-```bash
-ls -l /sys/class/net/
-```
-Outputs:
-```bash
-total 0
-lrwxrwxrwx    1 root     root             0 Jun 17 13:30 eth0 -> ../../devices/pci0000:00/0000:00:04.0/virtio2/net/eth0
-lrwxrwxrwx    1 root     root             0 Jun 17 13:30 lo -> ../../devices/virtual/net/lo
-lrwxrwxrwx    1 root     root             0 Jun 17 13:31 wg0 -> ../../devices/virtual/net/wg0
-```
-### การรับชื่อ (getting name) ของ interface จาก /sys/class/net
+2. ใช้ sudo เมื่อจำเป็น: บางการทำงานของ lspci ต้องการสิทธิ์ root หากเจอข้อผิดพลาด 'Permission denied', ลองรันคำสั่ง lspci ด้วย sudo
 
-นี่คือตัวอย่าง for loop ใน bash เพื่อแสดงรายการนั้นในรูปแบบที่ดี:
-```bash
-list=$(find /sys/class/net -type l)
-for nic in $list
-do
-    echo "*** [ NIC: $nic ] ***"
-    cat "${nic}/uevent"
-    echo "" 
-done
+3. ใช้ grep เพื่อกรองผลลัพธ์: หากมีจำนวนของอุปกรณ์ที่ต้องการจัดการมาก ผลลัพธ์ของ lspci อาจทำให้สับสน สามารถใช้คำสั่ง grep เพื่อกรองผลลัพธ์และทำให้มันง่ายต่อการอ่าน ตัวอย่างเช่น `lspci | grep -i nvidia` จะแสดงเฉพาะบรรทัดที่มีคำว่า 'nvidia'
+
+## ทำความเข้าใจระบบ PCI bus ใน Linux
+"Peripheral Component Interconnect (PCI)" คือ ช่องสื่อสารข้อมูลที่ทำงานด้วยความเร็วสูงที่เชื่อมต่อ CPU กับฮาร์ดแวร์ที่ผนวกมากับเครื่อง (เช่น Ethernet controller และ video adapter) และการ์ดฮาร์ดแวร์เสริม (เช่น การ์ด Wi-Fi หรือ Graphics Processing Unit)
+
+ใน Linux ระบบ PCI bus จะถูกตรวจพบและจัดการโดย kernel โดยอัตโนมัติ ซึ่งยังให้ส่วนต่อประสานให้แอปพลิเคชันทำงานร่วมกับอุปกรณ์ PCI คำสั่ง lspci เป็นหนึ่งในแอปพลิเคชันที่ออกแบบมาเพื่อให้สามารถดูและจัดการอุปกรณ์ PCI ในระบบได้ด้วยวิธีที่ใช้งานง่าย
+
+มาดูตัวอย่างที่แสดงลำดับความสูงของ PCI bus โดยใช้ command -t:
+command
 ```
-มันทำงานอย่างไร?
-+ list=$(find /sys/class/net -type l) ใช้คำสั่ง find เพื่อค้นหา symbolic links (-type l) ภายใน /sys/class/net ผลลัพธ์ของคำสั่ง find ซึ่งประกอบด้วยรายการของ NICs ถูกเก็บไว้ในตัวแปร shell ชื่อว่า $list
-+ for nic in $list เริ่มต้นด้วยการใช้ลูป for ใน bash ซึ่งวนลูปตามทุกรายการในตัวแปร list กล่าวอีกนัยหนึ่งคือ ทุกรายการจะถูกนำมาใส่ในตัวแปร $nic ตามลำดับ
-+ ตัวแปร $nic คือตัวแปร shell ที่เก็บชื่อของ NIC ปัจจุบัน
-+  echo "*** [ NIC: $nic ] ***" ทำหน้าที่เป็นส่วนหัวที่บ่งชี้ถึง NIC ปัจจุบันที่กำลังถูกประมวลผล
-+  cat "${nic}/uevent" ทำหน้าที่อ่านและแสดงผลเนื้อหาของไฟล์ uevent ที่เกี่ยวข้องกับ NIC ปัจจุบัน, ไฟล์ uevent ให้ข้อมูลเกี่ยวกับ NIC และแอตทริบิวต์ที่เกี่ยวข้อง การใช้ "${nic}/uevent" นี้บ่งบอกรูปแบบการใช้ค่าของตัวแปร $nic เพื่อสร้างเส้นทางของไฟล์สำหรับคำสั่ง cat ได้
-+  echo "" ทำหน้าที่เพิ่มบรรทัดว่างเพื่อแยกแยะผลลัพธ์สำหรับแต่ละ NIC และทำให้อ่านง่ายขึ้นในทีออน Linux โดยใช้ echo commmand
-
-เมื่อคุณรันคำสั่งเหล่านี้ใน Linux terminal คุณจะได้รับข้อมูลต่อไปนี้เกี่ยวกับ network interfaces ใน Linux system
-![alt text](https://www.cyberciti.biz/media/new/faq/2010/01/Listing-physical-network-cards-in-Linux-using-the-sys-class-net-file-1-617x1024.png)
-source: https://www.cyberciti.biz/
-## สรุปผล
-วิธีการแสดงรายการ network interface ทั้งหมดที่ใช้ได้ใน Linux system โดยใช้ command line เพื่อดูข้อมูลเพิ่มเติมเกี่ยวกับคำสั่งที่ใช้ คุณสามารถใช้ man command/help command ร่วมกับชื่อคำสั่งที่สนใจเพื่อดูเอกสารคำสั่งและความช่วยเหลือ
-```bash
-man ip
-ip --help
-man ifconfig
-man nmcli
-man arp
+lspci -t
 ```
+output
+```
+-[0000:00]-+-00.0
+           +-01.0-[01]--
+           +-14.0
+           +-16.0
+           +-1c.0-[02]----00.0
+           +-1c.4-[03]----00.0
+           +-1f.0
+           +-1f.2
+           \-1f.3
+```
+คำสั่งนี้แสดงอุปกรณ์ในรูปแบบ diagram ที่มีลักษณะคล้าย tree เพื่อแสดงวิธีที่พวกมันเชื่อมต่อกับ bus ต่าง ๆ ในระบบ ทุกเลขแทนอุปกรณ์แต่ละตัว และเส้นแสดงวิธีที่พวกมันเชื่อมต่อกับ bus นั้น ๆ
 
+## References
 
-## บรรณานุกรม 
-website : https://www.cyberciti.biz/
-
-chatgpt
+1. https://ioflood.com/blog/lspci-linux-command/
+2. chatgpt
