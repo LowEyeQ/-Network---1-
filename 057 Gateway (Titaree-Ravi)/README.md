@@ -35,6 +35,9 @@ source : https://www.geeksforgeeks.org/route-command-in-linux-with-examples/
 U หมายถึงเส้นทาง 'up' และ 
 G บ่งบอกว่านั่นคือ Gateway
 
+```ip route``` และ ```route``` มีการแสดงหรือกำหนดเส้นทาง (route) ของเครื่องเหมือนกัน
+แต่ ```ip route``` มีความยืดหยุ่นมากกว่าและเป็นมาตรฐานในการจัดการเส้นทาง IP ในระบบ Linux modern ในขณะที่ ```route``` เป็นคำสั่งที่ให้บริการเส้นทาง IP ในระบบ Unix/Linux แบบเก่า ๆ และมีความจำกัดในบางด้าน
+
 ## วิธีหา Gateway ip ด้วยคำสั่ง netstat ใน Linux
 คำสั่ง ```netstat``` ใช้ดูทุกการเชื่อมต่อเครือข่ายที่ทำงานบนระบบเพื่อหา Gateway โดย Gateway จะปรากฎในคอลัมน์ "Gateway"
 ![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/kernel.png)
