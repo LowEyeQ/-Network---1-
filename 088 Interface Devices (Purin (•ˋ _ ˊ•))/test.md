@@ -20,9 +20,6 @@ interface device มีบทบาทและหน้าที่สำคั
 
 6. การจัดการพลังงาน (Power Management): บาง interface device มีบทบาทในการจัดการพลังงานของอุปกรณ์ฮาร์ดแวร์ เพื่อประหยัดพลังงานหรือการจัดการในรูปแบบอื่น ๆ
 
-![Alt text]([https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_1280.jpg](https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg))
-source : [image](https://pixabay.com/th/photos/%E0%B8%AA%E0%B8%95%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%AD%E0%B8%9E-%E0%B8%9C%E0%B8%84%E0%B8%99-%E0%B8%AB%E0%B8%9A%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%8B%E0%B8%A5%E0%B8%84%E0%B8%AD%E0%B8%99-593341/)
-
 ## พื้นฐานและหลักการทำงาน
 
 พื้นฐานหรือหลักการทำงานของ interface device ใน Linux มีลักษณะดังนี้:
@@ -248,9 +245,7 @@ output
 ```
 คำสั่งนี้แสดงอุปกรณ์ในรูปแบบ diagram ที่มีลักษณะคล้าย tree เพื่อแสดงวิธีที่พวกมันเชื่อมต่อกับ bus ต่าง ๆ ในระบบ ทุกเลขแทนอุปกรณ์แต่ละตัว และเส้นแสดงวิธีที่พวกมันเชื่อมต่อกับ bus นั้น ๆ
 
-## Broader Concepts and Related Commands
+## References
 
-
-
-https://ioflood.com/blog/lspci-linux-command/
-chatgpt
+1. https://ioflood.com/blog/lspci-linux-command/
+2. chatgpt
