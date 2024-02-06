@@ -55,3 +55,27 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ```
 
  `lo` คือ อินเทอร์เฟซแบบ loopback, `enp0s25` คือ อินเทอร์เฟซ Ethernet, `wlp3s0` คือ อินเทอร์เฟซ wireless
+
+คำสั่ง **ifconfig** ใช้เพื่อกำหนดค่าและแสดงข้อมูลเกี่ยวกับอินเทอร์เฟซของเครือข่ายในระบบปฏิบัติการแบบ Unix , **-a** ใช้เพื่อแสดงข้อมูลเกี่ยวกับอินเทอร์เฟซทั้งหมด รวมถึงอินเทอร์เฟซที่ใช้งานไม่ได้ในปัจจุบัน
+ 
+ ตัวอย่างผลลัพธ์ของ `ifconfig -a` :
+```
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.10  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::a00:27ff:fe74:8ca2  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:74:8c:a2  txqueuelen 1000  (Ethernet)
+        RX packets 208332  bytes 279812907 (279.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 99644  bytes 7753682 (7.7 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 17369  bytes 1428921 (1.4 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 17369  bytes 1428921 (1.4 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+```
