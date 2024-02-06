@@ -6,7 +6,6 @@
 
 ![image](https://github.com/LowEyeQ/Network-1/assets/109953773/2a64e543-b186-4e60-90a2-91b838c6ba90)
 
-(souce : https://www.aunbangpo.com/a_10806_7374_%E0%B9%81%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94-%28Aircard%29-%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3%3F.htm)
 
 
 ## ชื่อเรียกอื่นๆ ของ Aircard adaptor
@@ -31,10 +30,10 @@
 
 ## วิธีการเพิ่ม Aircccard Adaptor ใน linux
 1. เสียบ Aircard เข้ากับพอร์ต USB:
-   เริ่มต้นโดยการเสียบ Aircard เข้ากับพอร์ต USB ของคอมพิวเตอร์ของคุณ
+   เริ่มต้นโดยการเสียบ Aircard เข้ากับพอร์ต USB ของคอมพิวเตอร์
    
 2. ตรวจสอบว่า linux หา Aircard เจอหรือไม่:
-   เมื่อคุณเสียบ Aircard เข้ากับคอมพิวเตอร์ ลองรันคำสั่ง `lsusb` ใน Terminal เพื่อดูว่าระบบ Linux สามารถรับรู้ว่ามี Aircard หรือไม่ คำสั่งนี้จะแสดงรายชื่อของอุปกรณ์ USB ทั้งหมดที่เชื่อมต่ออยู่
+   เมื่อเสียบ Aircard เข้ากับคอมพิวเตอร์ ลองรันคำสั่ง `lsusb` ใน Terminal เพื่อดูว่าระบบ Linux สามารถรับรู้ว่ามี Aircard หรือไม่ คำสั่งนี้จะแสดงรายชื่อของอุปกรณ์ USB ทั้งหมดที่เชื่อมต่ออยู่
 
 ตัวอย่างการรันคำสั่ง `lsusb`
    ```
@@ -56,7 +55,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 โดยส่วนมากแล้ว driver จะถูกติดตั้งมาโดยอัตโนมัติอยู่แแล้ว แต่มีในบางกรณีอาจจะต้องติดตั้ง driver เสริมสำหรับ aircard โดยอาจจะต้องดาวโหลน์และติดตั้งแยกต่างหากจากเว็บไซต์ของผู้ผลิต
 
 4. กำหนดค่าเครือข่าย (ถ้าจำเป็น):
-หลังจากที่ระบบ Linux รับรู้ Aircard แล้ว คุณอาจต้องกำหนดค่าเครือข่ายเพื่อให้ Aircard สามารถเชื่อมต่อกับอินเทอร์เน็ตได้ สำหรับบางระบบ Linux ระบบจะทำการตรวจจับและกำหนดค่าเครือข่ายโดยอัตโนมัติ ในขณะที่บางระบบอื่นอาจต้องทำการกำหนดค่าเครือข่ายด้วยตนเอง โดยใช้เครื่องมือเช่น Network Manager หรือการกำหนดค่าแบบ Command Line
+หลังจากที่ระบบ Linux รับรู้ Aircard แล้วต้องกำหนดค่าเครือข่ายเพื่อให้ Aircard สามารถเชื่อมต่อกับอินเทอร์เน็ตได้ สำหรับบางระบบ Linux ระบบจะทำการตรวจจับและกำหนดค่าเครือข่ายโดยอัตโนมัติ ในขณะที่บางระบบอื่นอาจต้องทำการกำหนดค่าเครือข่ายด้วยตนเอง โดยใช้เครื่องมือเช่น Network Manager หรือการกำหนดค่าแบบ Command Line
 
 ตัวอย่างโค้ดสำหรับการตั้งค่าเครือข่ายเอง
    ```
@@ -85,7 +84,7 @@ gateway = "192.168.1.1"  # Default gateway
 configure_network(interface, ip_address, subnet_mask, gateway)
 ```
 * รันโปรแกรมด้วยสิทธิ์ของผู้ใช้ root หรือผู้ใช้ที่มีสิทธิ์การใช้ sudo เพื่อทำการกำหนดค่าเครือข่าย
-* แทนที่ค่าของ interface, ip_address, subnet_mask, และ gateway ด้วยค่าที่เหมาะสมสำหรับเครือข่ายของคุณ
+* แทนที่ค่าของ interface, ip_address, subnet_mask, และ gateway ด้วยค่าที่เหมาะสมสำหรับเครือข่ายของ
 * การใช้ subprocess.run() ด้วย check=True จะทำให้โปรแกรมระงับการทำงานและแสดงข้อผิดพลาดหากคำสั่งไม่สำเร็จ
 
 5. ทดสอบการเชื่อมต่อ:
@@ -100,7 +99,6 @@ configure_network(interface, ip_address, subnet_mask, gateway)
 |**ifup / ifdown**|ใช้เปิดหรือปิดอินเทอร์เฟซเครือข่าย ซึ่งสามารถใช้กับ Aircard adapter ได้เช่นกัน|
 |**ip:**|จัดการเครือข่าย IP ซึ่งสามารถใช้ในการกำหนดค่า IP address, subnet mask, gateway, และการเชื่อมต่อสื่อสารระหว่างเครื่องแม่ข่ายและอุปกรณ์อื่น ๆ|
 |**modprobe / rmmod:**|ใช้ในการจัดการกับไดรเวอร์ Aircard adapter|
-|**nmcli:**|ใช้ในการจัดการกับไดรเวอร์ Aircard adapter|
 |**wvdial:**|เป็นการใช้งานในโหมด dial-up สามารถใช้ wvdial ในการกำหนดค่าและสร้างการเชื่อมต่อ.|
 
 
@@ -165,6 +163,29 @@ ip addr show
 
 ```
 
+![image](https://github.com/LowEyeQ/Network-1/assets/109953773/b2a3b77a-e342-46ec-bfad-32bcc0ec55dc)
+
+
+## ตัวอย่าง modem ที่รองรับการทำงานร่วมกับ linux ของ netgear
+|**Modem Type**	 | **CDMA** | **GSM/UMTS** | 
+| :-------- | :------- | :------- | 
+| **AirCards** | AirCard 580, AirCard 595, AirCard 597E, AirCard 402 | AirCard 501, AirCard 875, AirCard 88x, AirCard 88xE|
+|**USB modems**| AirCard 595U, Compass 597, USB 598, AirCard 250U*| AirCard 875U, AirCard 88xU, Compass 885/888/889, USBconnect 881, Mercury |
+
+
+
+## Networkmanager เกี่ยวข้องกับ aircard ยังไง?
+NetworkManager เป็นเครื่องมือในระบบปฏิบัติการ Linux ที่ใช้ในการจัดการการเชื่อมต่อเครือข่าย โดย NetworkManager จะช่วยในการตรวจจับ Aircard และการตั้งค่าการเชื่อมต่อให้ตรงตามความเหมาะสม รวมทั้งสามารถตั้งค่าและจัดการการเชื่อมต่อเครือข่ายอื่น ๆ ได้อีกด้วย เช่น Wi-Fi หรือ Ethernet.
+
+## คำสั่งของ Networkmanager
+
+ดังนั้น NetworkManager เป็นเครื่องมือที่สำคัญสำหรับการใช้งาน Aircard และช่วยให้ผู้ใช้งานสามารถจัดการและเชื่อมต่อกับเครือข่าย mobile broadband ได้อย่างมีประสิทธิภาพและง่ายดาย.
+
+|**Argument**	 | **Description** | 
+| :-------- | :------- | 
+| **nm-applet:** | แอปพลิเคชันกราฟิกสำหรับการจัดการเครือข่าย โดยสามารถใช้งานผ่าน GUI  สามารถใช้งานผ่านการคลิกขวาที่ไอคอน NetworkManager บนแถบเครื่องมือหรือแถบระบบของเครื่อง Linux เพื่อทำการเชื่อมต่อ Aircard |
+|**nmcli:**|ใช้ในการจัดการกับไดรเวอร์ Aircard adapter|
+
 ตัวอย่าง Output ของคำสั่ง `nmcli:` ที่เกี่ยวข้องกับการใช้งาน Aircard
  ```
 DEVICE   TYPE      STATE         CONNECTION
@@ -173,3 +194,11 @@ wlan0    wifi      connected     My_WiFi_Network
 wwan0    gsm       disconnected  --
 
 ```
+
+
+## Reference
+* https://www.aunbangpo.com/a_10806_7374_%E0%B9%81%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94-%28Aircard%29-%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3%3F.htm
+* https://kb.netgear.com/22827/Can-I-use-my-NETGEAR-AirCard-modem-on-a-Linux-operating-system-v-1-7-40
+* https://wiki.archlinux.org/title/NetworkManager#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established
+* https://kb.netgear.com/22869/Can-I-use-a-NETGEAR-AirCard-Modem-on-Linux-Machines-direct-IP-modems
+
