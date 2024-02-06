@@ -99,12 +99,40 @@ configure_network(interface, ip_address, subnet_mask, gateway)
 |**iwconfig**|กำหนดค่าและแสดงข้อมูลเกี่ยวกับอินเทอร์เฟซไร้สาย (Wireless) |
 |**ifup / ifdown**|ใช้เปิดหรือปิดอินเทอร์เฟซเครือข่าย ซึ่งสามารถใช้กับ Aircard adapter ได้เช่นกัน|
 |**ip:**|จัดการเครือข่าย IP ซึ่งสามารถใช้ในการกำหนดค่า IP address, subnet mask, gateway, และการเชื่อมต่อสื่อสารระหว่างเครื่องแม่ข่ายและอุปกรณ์อื่น ๆ|
-|**modprobe / rmmod: **|ใช้ในการจัดการกับไดรเวอร์ Aircard adapter|
-|** nmcli: **|ใช้ในการจัดการกับไดรเวอร์ Aircard adapter|
-|** wvdial: **|เป็นการใช้งานในโหมด dial-up สามารถใช้ wvdial ในการกำหนดค่าและสร้างการเชื่อมต่อ.|
+|**modprobe / rmmod:**|ใช้ในการจัดการกับไดรเวอร์ Aircard adapter|
+|**nmcli:**|ใช้ในการจัดการกับไดรเวอร์ Aircard adapter|
+|**wvdial:**|เป็นการใช้งานในโหมด dial-up สามารถใช้ wvdial ในการกำหนดค่าและสร้างการเชื่อมต่อ.|
 
 
 คำสั่งเหล่านี้จะช่วยให้จัดการ Aircard Adaptor ได้อย่างมีประสิทธิภาพและง่ายดายขึ้น โดยแนะนำให้ผู้ใช้ดูเอกสารคู่มือหรือคำสั่งช่วยเพิ่มเติมได้จากเว็บไซต์ของผู้จำหน่าย Aircard Adaptor 
 
 อีกสิ่งที่ควรพิจารณาคือการใช้ NetworkManager หรือ netplan เพื่อกำหนดการเชื่อมต่อและการตั้งค่าเครือข่ายให้กับ Aircard adapter ใน Linux โดย NetworkManager เป็นเครื่องมือจัดการเครือข่ายแบบกราฟิกที่ใช้กันอย่างแพร่หลาย ส่วน netplan เป็นเครื่องมือที่ใช้กับระบบปฏิบัติการ Ubuntu เพื่อกำหนดค่าเครือข่ายในรูปแบบ YAML configuration files โดยการใช้เครื่องมือเหล่านี้จะช่วยให้กำหนดค่าเครือข่ายและการเชื่อมต่อ Aircard adaptor ได้อย่างง่ายดายและสะดวกมากขึ้น คำสั่งที่ใช้กันอย่างแพร่หลายเมื่อต้องการกำหนดค่าเครือข่ายเช่น ip หรือ ifconfig ก็ยังคงใช้งานได้ เฉพาะในบางกรณีที่ต้องการการกำหนดค่าและการจัดการระดับเสถียรมากขึ้นสามารถพิจารณาเลือกใช้ NetworkManager หรือ netplan ได้ตามความเหมาะสม
 
+
+ตัวอย่าง Output ของคำสั่ง `ifconfig`
+ ```
+ifconfig
+ifconfig eth0 up
+ifconfig eth0 192.168.1.2 netmask 255.255.255.0
+route add default gw 192.168.1.1
+ifconfig eth0
+```
+
+
+ตัวอย่างของคำสั่ง iwconfig ที่แสดงข้อมูลเกี่ยวกับอินเทอร์เฟซ
+ ```
+iwconfig wlan0
+```
+
+ตัวอย่าง Output ของคำสั่ง iwconfig ที่แสดงข้อมูลเกี่ยวกับอินเทอร์เฟซ
+ ```
+wlan0     IEEE 802.11  ESSID:"Your_Network_Name"
+          Mode:Managed  Frequency:2.412 GHz  Access Point: 00:11:22:33:44:55
+          Bit Rate=54 Mb/s   Tx-Power=20 dBm
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:off
+          Link Quality=50/70  Signal level=-60 dBm
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+```
