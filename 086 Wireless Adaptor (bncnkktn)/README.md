@@ -43,14 +43,17 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
    4. **ขั้นตอนตรวจสอบสถานะของอแด็ปเตอร์**: ใช้คำสั่ง **ip** หรือ **ifconfig** เพื่อตรวจสอบว่าอแด็ปเตอร์ไร้สายของคุณได้รับการยอมรับจากระบบหรือไม่ และใช้งานได้หรือไม่
    ตัวอย่างเช่น:
 คำสั่ง **ip link show** ใช้เพื่อแสดงข้อมูลเกี่ยวกับอินเทอร์เฟซเครือข่าย โดยจะให้รายละเอียดเกี่ยวกับสถานะปัจจุบันและการกำหนดค่าของอินเทอร์เฟซเครือข่ายทั้งหมดในระบบ
+
 ตัวอย่างผลลัพธ์ของ `ip link show` :
-      ```1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+```
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
 2: enp0s25: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
    link/ether f0:de:f1:9c:56:74 brd ff:ff:ff:ff:ff:ff
 3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DORMANT group default qlen 1000
    link/ether 48:5d:60:2a:ab:10 brd ff:ff:ff:ff:ff:ff
 ```
+
  `lo` คือ อินเทอร์เฟซแบบ loopback
 `enp0s25` คือ อินเทอร์เฟซ Ethernet
 `wlp3s0` คือ อินเทอร์เฟซ wireless
