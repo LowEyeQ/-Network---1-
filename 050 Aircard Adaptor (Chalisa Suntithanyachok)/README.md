@@ -119,13 +119,11 @@ ifconfig eth0
 ```
 
 
-ตัวอย่างของคำสั่ง iwconfig ที่แสดงข้อมูลเกี่ยวกับอินเทอร์เฟซ
+ตัวอย่าง Output ของคำสั่ง `iwconfig` ที่แสดงข้อมูลเกี่ยวกับอินเทอร์เฟซ
  ```
 iwconfig wlan0
-```
 
-ตัวอย่าง Output ของคำสั่ง iwconfig ที่แสดงข้อมูลเกี่ยวกับอินเทอร์เฟซ
- ```
+##ตัวอย่าง Output
 wlan0     IEEE 802.11  ESSID:"Your_Network_Name"
           Mode:Managed  Frequency:2.412 GHz  Access Point: 00:11:22:33:44:55
           Bit Rate=54 Mb/s   Tx-Power=20 dBm
@@ -134,5 +132,44 @@ wlan0     IEEE 802.11  ESSID:"Your_Network_Name"
           Link Quality=50/70  Signal level=-60 dBm
           Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
           Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+```
+
+
+
+ตัวอย่าง Output ของคำสั่ง `ip addr show` เพื่อดูข้อมูลเกี่ยวกับอินเทอร์เฟซทั้งหมด รวมทั้ง Aircard ด้วย
+ ```
+ip addr show
+
+##ตัวอย่าง Output
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.2/24 brd 192.168.1.255 scope global dynamic eth0
+       valid_lft 42555sec preferred_lft 42555sec
+    inet6 fe80::223:4eff:fe7d:3b0c/64 scope link 
+       valid_lft forever preferred_lft forever
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.3/24 brd 192.168.1.255 scope global dynamic wlan0
+       valid_lft 42555sec preferred_lft 42555sec
+    inet6 fe80::223:4eff:fe7d:3b0d/64 scope link 
+       valid_lft forever preferred_lft forever
+4: ppp0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 3
+    link/ppp 
+    inet 10.20.30.40 peer 50.60.70.80/32 scope global ppp0
+
+```
+
+ตัวอย่าง Output ของคำสั่ง `nmcli:` ที่เกี่ยวข้องกับการใช้งาน Aircard
+ ```
+DEVICE   TYPE      STATE         CONNECTION
+eth0     ethernet  connected     Wired connection 1
+wlan0    wifi      connected     My_WiFi_Network
+wwan0    gsm       disconnected  --
 
 ```
