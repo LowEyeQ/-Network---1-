@@ -41,7 +41,7 @@ The IP command supports the following command-line options:
 เพื่อกำหนดที่อยู่ IP แบบคงที่ในระบบที่ใช้งานเบื้องต้นของ Debian-based distributions เช่น Debian, Ubuntu, และ Mint 
 จะต้องแก้ไขหรืออัปเดตไฟล์การกำหนดค่าอินเตอร์เฟซเครือข่ายที่ /etc/network/interfaces เพื่อทำการเปลี่ยนแปลงอย่างถาวรตามตัวอย่างด้านล่าง:
 ```bash
-$ sudo nano /etc/network/interfaces [On Ubuntu Linux]
+$ sudo nano /etc/netplan/00-installer-config.yaml [On Ubuntu Linux]
 ```
 ในไฟล์ netplan configuration, จะเห็นการกำหนดค่าของอินเตอร์เฟซเครือข่าย ซึ่งอาจมีลักษณะเป็นประมาณนี้:
 ```bash
@@ -52,6 +52,7 @@ $ sudo nano /etc/network/interfaces [On Ubuntu Linux]
       dhcp4: true
       optional: true
 ```
+>
 เพื่อกำหนดที่อยู่ IP แบบคงที่, ต้องเปลี่ยน dhcp4 เป็น false และระบุที่อยู่ IP และnetmaskด้วย โดยมีรูปแบบเช่นนี้:
 ```bash
 network:
@@ -68,6 +69,8 @@ network:
 ```bash
 $ sudo netplan apply
 ```
+> ชื่อและโครงสร้างที่แตกต่างกัน ใน Ubuntu, ไฟล์การกำหนดค่าเครือข่ายอยู่ใน /etc/netplan/ และมักจะมีชื่อเป็น 01-netcfg.yaml หรือ 50-cloud-init.yaml หรือชื่ออื่น ๆ ขึ้นอยู่กับการติดตั้งและการกำหนดค่าของระบบ
+สำหรับการกำหนดที่อยู่ IP แบบคงที่ใน Ubuntu คุณสามารถสร้างไฟล์ .yaml ใหม่ใน /etc/netplan/ โดยใช้ชื่ออะไรก็ได้ตามความเหมาะสม เช่น my-network-config.yaml หรืออื่น ๆ แล้วนำเข้ารูปแบบการกำหนดค่าเครือข่ายลงไปในไฟล์นั้น
 
 ### Temporary Configure Static IP Address in Linux
 สำหรับการกำหนดค่าเครือข่ายชั่วคราว (temporary network configurations) ใน Linux คุณสามารถใช้คำสั่ง ip เพื่อกำหนดที่อยู่ IP 
@@ -163,7 +166,9 @@ check status ของ eth2
 ```
 ## Soruce/Reference
 (https://www.tecmint.com/ip-command-examples/)
+
 (https://www.cyberciti.biz/faq/linux-ip-command-examples-usage-syntax/)
+
 ([https://www.tecmint.com/ip-command-examples/](https://www.ibm.com/docs/en/power9/0009-ESS?topic=notebook-setting-ip-address-in-linux)https://www.ibm.com/docs/en/power9/0009-ESS?topic=notebook-setting-ip-address-in-linux)
 (https://www.geeksforgeeks.org/ifconfig-command-in-linux-with-examples/)
 (https://www.linode.com/docs/guides/how-to-use-the-linux-ip-command/)
