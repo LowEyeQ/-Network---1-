@@ -6,7 +6,9 @@
 
 ![image](https://github.com/LowEyeQ/Network-1/assets/109953773/2a64e543-b186-4e60-90a2-91b838c6ba90)
 
-(souce : https://www.aunbangpo.com/a_10806_7374_%E0%B9%81%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94-%28Aircard%29-%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3%3F.htm)
+[souce]([https://www.google.com](https://www.aunbangpo.com/a_10806_7374_%E0%B9%81%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94-%28Aircard%29-%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3%3F.htm))
+
+
 
 
 ## ชื่อเรียกอื่นๆ ของ Aircard adaptor
