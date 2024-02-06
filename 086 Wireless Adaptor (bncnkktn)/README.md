@@ -160,5 +160,7 @@ ______
 References:
 * <a href="https://th.linux-console.net/?p=342" />https://th.linux-console.net/?p=342</a>
 * <a href="https://www.tp-link.com/ae/blog/378/what-is-a-wifi-adapter-and-how-to-pick-the-best-one-for-you-/#:~:text=A%20WiFi%20adapter%20allows%20your,to%20the%20latest%20WiFi%20generation." />https://www.tp-link.com/ae/blog/378/</a>
-* <a href="https://blog.desdelinux.net/th/como-conectarse-a-una-red-wifi-usando-el-terminal/#google_vignette" />https://blog.desdelinux.net/th/</a>
+* <a href="https://unix.stackexchange.com/questions/92799/connecting-to-wifi-network-through-command-line" />https://unix.stackexchange.com/questions/92799/</a>
+
+
 
