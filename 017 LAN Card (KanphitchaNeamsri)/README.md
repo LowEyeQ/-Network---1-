@@ -1,7 +1,7 @@
 
 # LAN Card
 ## LAN Card หรือ Network Interface Card [NIC]
-    LAN Card: ย่อมาจาก Local Area Network Card : หมายถึง การ์ดเครือข่ายที่ใช้เทคโนโลยีอีเธอร์เน็ต (Ethernet ในการเชื่อมต่อกับเครือข่ายท้องถิ่น (LAN) 
+    LAN Card: ย่อมาจาก Local Area Network Card : หมายถึง การ์ดเครือข่ายที่ใช้เทคโนโลยีอีเธอร์เน็ต (Ethernet ในการเชื่อมต่อกับเครือข่ายท้องถิ่น (LAN)) 
 LAN Card เป็นประเภทหนึ่งของ NIC
 
     Network Interface Card (NIC) : หมายถึง การ์ดใดๆ ที่ทำหน้าที่เชื่อมต่อคอมพิวเตอร์กับเครือข่าย โดยไม่จำเป็นต้องระบุเทคโนโลยีที่ใช้ 
@@ -23,13 +23,13 @@ Network Interface Card ≠ Ethernet Network Card (NIC อาจใช้เท�
 
 
 
-![้hi.](https://techterms.com/img/lg/nic_98.jpg)
+![้hi.](https://www.shutterstock.com/shutterstock/photos/472460401/display_1500/stock-photo-network-lan-card-for-computer-isolated-on-white-background-clipping-path-for-use-472460401.jpg)
 
 Typical Ethernet NIC PCI card
 
 
 
-source : [http://www.yolinux.com/TUTORIALS/LinuxTutorialNetworking-Add_NIC.html](https://www.google.com/url?sa=i&url=https%3A%2F%2Ftechterms.com%2Fdefinition%2Fnic&psig=AOvVaw1x9hKX3drRSx18qeTLsBYc&ust=1707305122062000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNif8a7NloQDFQAAAAAdAAAAABAQ).
+source : [https://www.shutterstock.com/th/image-photo/network-lan-card-computer-isolated-on-472460401](https://www.shutterstock.com/th/image-photo/network-lan-card-computer-isolated-on-472460401).
 
 ## การเพิ่ม NIC ใน Linux Networking
 โดยทั่วไปแล้ว การ์ดเครือข่ายอีเธอร์เน็ต (Ethernet network interface) จะถูกติดตั้งไว้ภายในเมนบอร์ดของคอมพิวเตอร์รุ่นใหม่ส่วนใหญ่ โดยเฉพาะอย่างยิ่งสำหรับระบบเซิร์ฟเวอร์ ซึ่งมักจะมีการ์ดเครือข่ายติดตั้งอยู่ภายในเมนบอร์ดจำนวนสองอัน นอกจากนี้ ยังสามารถติดตั้งการ์ดเครือข่ายเพิ่มเติมลงในสล็อตเสริม PCI ได้อีกด้วย
@@ -210,7 +210,185 @@ restart network :
 **YAML ค่อนข้างเข้มงวดในการเยื้อง ใช้ช่องว่างในการเยื้อง ไม่ใช่แท็บ มิฉะนั้นคุณจะพบข้อผิดพลาด**
 
 
-```ดก่วเ้ฟด้ยฟก้วมกวฟ้มวหก้```
+## How to Enable (UP)/Disable (DOWN) Network Interface Port (NIC) in Linux?
+
+ip command : แสดงข้อมูลการ์ดอินเทอร์เฟซเครือข่ายที่มีอยู่ในระบบ Linux
+
+    # ip a
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+        valid_lft forever preferred_lft forever
+        inet6 ::1/128 scope host 
+        valid_lft forever preferred_lft forever
+    2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+        link/ether 08:00:27:c2:e4:e8 brd ff:ff:ff:ff:ff:ff
+        inet 192.168.1.4/24 brd 192.168.1.255 scope global dynamic noprefixroute enp0s3
+        valid_lft 86049sec preferred_lft 86049sec
+        inet6 fe80::3899:270f:ae38:b433/64 scope link noprefixroute 
+        valid_lft forever preferred_lft forever
+    3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+        link/ether 08:00:27:30:5d:52 brd ff:ff:ff:ff:ff:ff
+        inet 192.168.1.3/24 brd 192.168.1.255 scope global dynamic noprefixroute enp0s8
+        valid_lft 86049sec preferred_lft 86049sec
+        inet6 fe80::32b7:8727:bdf2:2f3/64 scope link noprefixroute 
+        valid_lft forever preferred_lft forever
+
+## 1) Bring UP/Down Network Interface, using ifconfig command
+`ifconfig` ทำงานใน boot time เพื่อตั้งค่าอินเทอร์เฟซเครือข่ายและให้ข้อมูลเกี่ยวกับ NIC
+
+Common Syntax for ifconfig:
+
+    # ifconfig [NIC_NAME] Down/Up
+
+Example : **down** "enp0s3"
+
+    ifconfig enp0s3 down
+
+output
+
+    # ip a sh dev enp0s3
+    2: enp0s3: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+        link/ether 08:00:27:c2:e4:e8 brd ff:ff:ff:ff:ff:ff
+
+Example : **up** "enp0s3"
+
+    # ifconfig enp0s3 up
+
+output
+
+    # ip a sh dev enp0s3
+    2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+        link/ether 08:00:27:c2:e4:e8 brd ff:ff:ff:ff:ff:ff
+        inet 192.168.1.4/24 brd 192.168.1.255 scope global dynamic noprefixroute enp0s3
+        valid_lft 86294sec preferred_lft 86294sec
+        inet6 fe80::3899:270f:ae38:b433/64 scope link noprefixroute 
+        valid_lft forever preferred_lft forever
+
+## 2) How to enable and disable Network Interface using ifdown/ifup command?
+
+คำสั่ง `ifdown` จะทำให้ Network interface down ในขณะที่คำสั่ง `ifup` 
+จะทำให้ Network interface up
+
+Common Syntax for ifdown/ifup:
+
+    # ifdown [NIC_NAME]
+
+    # ifup [NIC_NAME]
+
+Example : **down** and **up** "enp0s3"
+
+    # ifdown eth1
+
+    # ifup eth1
+
+output
+
+    "down"
+    # ip a sh dev eth1
+    3: eth1: <BROADCAST,MULTICAST> mtu 1500 qdisc pfifo_fast state DOWN qlen 1000
+        link/ether 08:00:27:d5:a0:18 brd ff:ff:ff:ff:ff:ff
+
+    "up"
+    # ip a sh dev eth1
+    3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
+        link/ether 08:00:27:d5:a0:18 brd ff:ff:ff:ff:ff:ff
+        inet 192.168.1.7/24 brd 192.168.1.255 scope global eth1
+        inet6 fe80::a00:27ff:fed5:a018/64 scope link tentative dadfailed 
+        valid_lft forever preferred_lft forever
+
+**ifup และ ifdown ไม่รองรับอุปกรณ์อินเทอร์เฟซล่าสุดที่มีชื่อเช่น `enpXXX`**
+
+## 3) Bringing UP/Down Network Interface using ip command?
+
+Common Syntax for ip:
+
+    # ip link set  Down/Up
+
+Example : **down** and **up** "enp0s3"
+
+    # ip link set enp0s3 down
+
+    # ip link set enp0s3 up
+
+output
+
+    # ip a sh dev enp0s3
+    2: enp0s3: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+        link/ether 08:00:27:c2:e4:e8 brd ff:ff:ff:ff:ff:ff
+
+    # ip a sh dev enp0s3
+    2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+        link/ether 08:00:27:c2:e4:e8 brd ff:ff:ff:ff:ff:ff
+        inet 192.168.1.4/24 brd 192.168.1.255 scope global dynamic noprefixroute enp0s3
+        valid_lft 86294sec preferred_lft 86294sec
+        inet6 fe80::3899:270f:ae38:b433/64 scope link noprefixroute 
+        valid_lft forever preferred_lft forever
+
+## 4) How to enable & disable Network Interface using nmcli command?
+
+คำสั่ง `nmcli` สามารถใช้แทน `nm-applet` ได้ nmcli ใช้เพื่อสร้าง แสดง แก้ไข ลบ เปิดใช้งานและปิดใช้งานการเชื่อมต่อเครือข่าย รวมถึงควบคุมและแสดงสถานะอุปกรณ์เครือข่าย
+
+คำสั่ง nmcli ดำเนินงานส่วนใหญ่โดยใช้ `profile name` แทน `device name` รันคำสั่งต่อไปนี้เพื่อระบุชื่ออินเทอร์เฟซ
+
+    # nmcli con show
+    NAME                UUID                                  TYPE      DEVICE 
+    Wired connection 1  3d5afa0a-419a-3d1a-93e6-889ce9c6a18c  ethernet  enp0s3 
+    Wired connection 2  a22154b7-4cc4-3756-9d8d-da5a4318e146  ethernet  enp0s8 
+
+Common Syntax for nmcli:
+
+    # nmcli con  Down/Up
+
+เริ่มจากการใส่ `profile name` แทนการใส่ `device name` เพื่อ down interface และ up interface 
+
+    # nmcli con down 'Wired connection 1'
+    Connection 'Wired connection 1' successfully deactivated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/6)
+
+
+    # nmcli con up 'Wired connection 1'
+    Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/7)
+
+output
+
+    # nmcli dev status
+    DEVICE  TYPE      STATE         CONNECTION         
+    enp0s8  ethernet  connected     Wired connection 2 
+    enp0s3  ethernet  disconnected  --                 
+    lo      loopback  unmanaged     --  
+
+
+    # nmcli dev status
+    DEVICE  TYPE      STATE      CONNECTION         
+    enp0s8  ethernet  connected  Wired connection 2 
+    enp0s3  ethernet  connected  Wired connection 1 
+    lo      loopback  unmanaged  --  
+
+## 5) Bringing UP/Down Network Interface using systemctl command?
+
+คำ สั่ง `systemctl` สามารถใช้เพื่อใช้การกำหนดค่าใหม่สำหรับบริการเครือข่ายซึ่งจะ brings down and brings up >> Network Interface Cards (NIC) ทั้งหมดขึ้นมาเพื่อโหลดการกำหนดค่าใหม่
+
+    # systemctl restart network
+
+    # systemctl restart network.service
+
+## 6) Bringing UP/Down Network Interface using nmtui tool?
+
+`nmtui` เป็นแอปพลิเคชัน TUI ใช้สำหรับการโต้ตอบกับ Network Manager ช่วยให้เราสามารถกำหนดค่าอินเทอร์เฟซเครือข่ายบนระบบ Linux โดยใช้ GUI ได้อย่างง่ายดาย
+รันคำสั่ง `# nmtui` เพื่อเรียกใช้   interface nmtui 
+- เลือก “Activate a connection”
+- กด “OK”
+- เลือก interface ที่ต้องการ 
+- กด “Deactivate”
+- สำหรับการเปิดใช้งาน ทำตามขั้นตอนเดียวกับข้างต้นได้เลย แต่เป็นกด “Activate”
+
+
+
+
+
+
+
+
 
 ## เพิ่มเติม
 * Network Interface Card (NIC) : หมายถึง การ์ดใดๆ ที่ทำหน้าที่เชื่อมต่อคอมพิวเตอร์กับเครือข่าย โดยไม่จำเป็นต้องระบุเทคโนโลยีที่ใช้
@@ -218,4 +396,5 @@ restart network :
 ## Source เนื้อหา
 * http://www.yolinux.com/TUTORIALS/LinuxTutorialNetworking-Add_NIC.html
 * https://vitux.com/how-to-configure-networking-with-netplan-on-ubuntu/
+* https://www.2daygeek.com enable-disable-up-down-nic-network-interface-port-linux/
 
