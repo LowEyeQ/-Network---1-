@@ -26,7 +26,7 @@ Computer networking เป็นการทำให้คอมพิวเต
 | **รหัสนักศึกษา** | **ชื่อ-นามสกุล** | **ส่วนที่รับผิดชอบ** |**รูป** | 
 | :-------- | :------- |  :------- |  :------- |
 |**65070017**| นางสาว กานต์พิชชา  เนียมศรี | LAN Card | ![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/017%20LAN%20Card%20(KanphitchaNeamsri)/65070017.jpg?raw=true) |
-|**65070033**| นางสาว จินดามณี  จิรสรวงเกษม | Routing | ![Alt text]() |
+|**65070033**| นางสาว จินดามณี  จิรสรวงเกษม | Routing | ![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/033%20Routing%20(J-Jindamanee)/65070033.jpg) |
 |**65070037**| นาย จิรัฎฐวัฒน์  อัศวโกศลปภา | IP Setup | ![Alt text](https://raw.githubusercontent.com/LowEyeQ/Network-1/main/037%20IP%20Setup%20(LowEyeQ)/65070037.jpg?raw=true) |
 |**65070050**| นางสาว ชาลิสา  สันติธัญญาโชค | Aircard Adaptor | ![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/Other/pic_of_samachick/50.jpg?raw=true) |
 |**65070057**| นางสาว ฐิตารีย์  รวิชุติวรรณ | Gateway | ![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/057%20Gateway%20(Titaree-Ravi)/65070057.jpg) |
