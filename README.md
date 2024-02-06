@@ -23,15 +23,15 @@ Computer networking เป็นการทำให้คอมพิวเต
 สิ่งที่ 8 Key Subcomponent of Focus มีเหมือนหรือใกล้เคียงกันบน Linux คือการแสดงข้อมูล และกำหนดค่าเครือข่าย
 
 ## Member
-| **รหัสนักศึกษา** | **ชื่อ-นามสกุล** | **รูป** | 
-| :-------- | :------- |  :------- | 
-|**65070017**| นางสาว กานต์พิชชา  เนียมศรี | ![Alt text]() |
-|**65070033**| นางสาว จินดามณี  จิรสรวงเกษม | ![Alt text]() |
-|**65070037**| นาย จิรัฎฐวัฒน์  อัศวโกศลปภา | ![Alt text]() |
-|**65070050**| นางสาว ชาลิสา  สันติธัญญาโชค | ![Alt text]() |
-|**65070057**| นางสาว ฐิตารีย์  รวิชุติวรรณ | ![Alt text](https://scontent.fbkk6-1.fna.fbcdn.net/v/t39.30808-6/426103768_1104010290723274_1652347665402036447_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeEmwNUX42ryFwTYwfF-P1awuXhelb9J4q-5eF6Vv0nir-WYgsfpeDQsX26H3F7A9ieGZtsy4_UttulrTU2lJaqB&_nc_ohc=jv42dy3hIdoAX_n120k&_nc_ht=scontent.fbkk6-1.fna&cb_e2o_trans=t&oh=00_AfBVDx9MnrB9q7ORkbXCPLSA7aq3WBOCfUaBn0EOWsUeSQ&oe=65C7DADD) |
-|**65070086**| นางสาว ณิชนันท์  กิมเกถนอม | ![Alt text]() |
-|**65070088**| นางสาว ปุรินปรัชญ์  อาษานอก | ![Alt text]() |
+| **รหัสนักศึกษา** | **ชื่อ-นามสกุล** | **ส่วนที่รับผิดชอบ** |**รูป** | 
+| :-------- | :------- |  :------- |  :------- |
+|**65070017**| นางสาว กานต์พิชชา  เนียมศรี | LAN Card | ![Alt text]() |
+|**65070033**| นางสาว จินดามณี  จิรสรวงเกษม | Routing | ![Alt text]() |
+|**65070037**| นาย จิรัฎฐวัฒน์  อัศวโกศลปภา | IP Setup | ![Alt text]() |
+|**65070050**| นางสาว ชาลิสา  สันติธัญญาโชค | Aircard Adaptor | ![Alt text]() |
+|**65070057**| นางสาว ฐิตารีย์  รวิชุติวรรณ | Gateway | ![Alt text](https://scontent.fbkk6-1.fna.fbcdn.net/v/t39.30808-6/426103768_1104010290723274_1652347665402036447_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeEmwNUX42ryFwTYwfF-P1awuXhelb9J4q-5eF6Vv0nir-WYgsfpeDQsX26H3F7A9ieGZtsy4_UttulrTU2lJaqB&_nc_ohc=jv42dy3hIdoAX_n120k&_nc_ht=scontent.fbkk6-1.fna&cb_e2o_trans=t&oh=00_AfBVDx9MnrB9q7ORkbXCPLSA7aq3WBOCfUaBn0EOWsUeSQ&oe=65C7DADD) |
+|**65070086**| นางสาว ณิชนันท์  กิมเกถนอม | Wireless Adaptor | ![Alt text]() |
+|**65070088**| นางสาว ปุรินปรัชญ์  อาษานอก | Interface Devices และ DNS | ![Alt text]() |
 
 ## Reference
 - https://www.oreilly.com/library/view/linux-networking-cookbook/9780596102487/ch01.html
