@@ -25,9 +25,9 @@ Computer networking เป็นการทำให้คอมพิวเต
 ## Member
 | **รหัสนักศึกษา** | **ชื่อ-นามสกุล** | **ส่วนที่รับผิดชอบ** |**รูป** | 
 | :-------- | :------- |  :------- |  :------- |
-|**65070017**| นางสาว กานต์พิชชา  เนียมศรี | LAN Card | ![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/017%20LAN%20Card%20(KanphitchaNeamsri)/65070017.jpg?raw=true) |
+|**65070017**| นางสาว กานต์พิชชา  เนียมศรี | LAN Card | ![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/017%20LAN%20Card%20(KanphitchaNeamsri)/65070017.jpg?raw=true)(width=300) |
 |**65070033**| นางสาว จินดามณี  จิรสรวงเกษม | Routing | ![Alt text]() |
-|**65070037**| นาย จิรัฎฐวัฒน์  อัศวโกศลปภา | IP Setup | ![Alt text](https://raw.githubusercontent.com/LowEyeQ/Network-1/main/037%20IP%20Setup%20(LowEyeQ)/65070037.jpg?raw=true) |
+|**65070037**| นาย จิรัฎฐวัฒน์  อัศวโกศลปภา | IP Setup | ![Alt text](https://raw.githubusercontent.com/LowEyeQ/Network-1/main/037%20IP%20Setup%20(LowEyeQ)/65070037.jpg?raw=true)(width=300) |
 |**65070050**| นางสาว ชาลิสา  สันติธัญญาโชค | Aircard Adaptor | ![Alt text]() |
 |**65070057**| นางสาว ฐิตารีย์  รวิชุติวรรณ | Gateway | ![Alt text](https://scontent.fbkk6-1.fna.fbcdn.net/v/t39.30808-6/426103768_1104010290723274_1652347665402036447_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeEmwNUX42ryFwTYwfF-P1awuXhelb9J4q-5eF6Vv0nir-WYgsfpeDQsX26H3F7A9ieGZtsy4_UttulrTU2lJaqB&_nc_ohc=jv42dy3hIdoAX_n120k&_nc_ht=scontent.fbkk6-1.fna&cb_e2o_trans=t&oh=00_AfBVDx9MnrB9q7ORkbXCPLSA7aq3WBOCfUaBn0EOWsUeSQ&oe=65C7DADD) |
 |**65070086**| นางสาว ณิชนันท์  กิมเกถนอม | Wireless Adaptor | ![Alt text]() |
