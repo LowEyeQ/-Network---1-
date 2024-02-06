@@ -29,7 +29,7 @@ Computer networking เป็นการทำให้คอมพิวเต
 |**65070033**| นางสาว จินดามณี  จิรสรวงเกษม | Routing | ![Alt text]() |
 |**65070037**| นาย จิรัฎฐวัฒน์  อัศวโกศลปภา | IP Setup | ![Alt text](https://raw.githubusercontent.com/LowEyeQ/Network-1/main/037%20IP%20Setup%20(LowEyeQ)/65070037.jpg?raw=true)(width=300) |
 |**65070050**| นางสาว ชาลิสา  สันติธัญญาโชค | Aircard Adaptor | ![Alt text]() |
-|**65070057**| นางสาว ฐิตารีย์  รวิชุติวรรณ | Gateway | ![Alt text](https://scontent.fbkk6-1.fna.fbcdn.net/v/t39.30808-6/426103768_1104010290723274_1652347665402036447_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeEmwNUX42ryFwTYwfF-P1awuXhelb9J4q-5eF6Vv0nir-WYgsfpeDQsX26H3F7A9ieGZtsy4_UttulrTU2lJaqB&_nc_ohc=jv42dy3hIdoAX_n120k&_nc_ht=scontent.fbkk6-1.fna&cb_e2o_trans=t&oh=00_AfBVDx9MnrB9q7ORkbXCPLSA7aq3WBOCfUaBn0EOWsUeSQ&oe=65C7DADD) |
+|**65070057**| นางสาว ฐิตารีย์  รวิชุติวรรณ | Gateway | ![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/057%20Gateway%20(Titaree-Ravi)/65070057.jpg) |
 |**65070086**| นางสาว ณิชนันท์  กิมเกถนอม | Wireless Adaptor | ![Alt text]() |
 |**65070088**| นางสาว ปุรินปรัชญ์  อาษานอก | Interface Devices และ DNS | ![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/088%20DNS%20Purin%20((%E2%80%A2%CB%8B%20_%20%CB%8A%E2%80%A2))/65070088.jpg?raw=true)
 |
