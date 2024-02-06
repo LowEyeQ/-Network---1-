@@ -82,6 +82,7 @@ source : https://www.redhat.com/
 
 กระบวนการทำงานของ DNS อธิบายวิธีการสื่อสารภายใน DNS และวิธีการแก้ไขที่อยู่เหล่านี้
 ![alt text](https://www.redhat.com/sysadmin/sites/default/files/styles/embed_large/public/2021-08/Screen%20Shot%202021-08-10%20at%203.31.08%20PM.png?itok=mVw21968)
+
 source : https://www.redhat.com/
 
 
@@ -178,45 +179,37 @@ nameserver 192.168.25.132
 [root@servera ~] # systemctl restart named.service
 ```
 
-## Verify the DNS name resolution
-เมื่อได้ติดตั้งแพ็กเกจ BIND, กำหนดค่าไฟล์ named, สร้างโซนการค้นหา, และรีสตาร์ทบริการเพื่อให้การกำหนดค่าเข้าทำงาน. ตอนนี้ให้ใช้คำสั่ง nslookup และ dig เพื่อตรวจสอบว่า DNS ทำงานอย่างถูกต้องและตรวจสอบว่าคุณได้รับผลลัพธ์ที่ตั้งใจ.
+## ตรวจสอบค่า ip DNS ยังไง 
 
-* **nslookup** เป็นโปรแกรมที่ใช้สอบถามเซิร์ฟเวอร์ชื่อโดเมนบนอินเทอร์เน็ต
-* **dig** เป็นเครื่องมือที่ใช้สอบถามเซิร์ฟเวอร์ DNS โดยมีการทำ DNS lookup และแสดงคำตอบที่ได้จากเซิร์ฟเวอร์
+ip DNS สามารถตรวจสอบได้ด้วย command `cat /etc/resolv.conf` 
 
+![alt text](https://github.com/LowEyeQ/Network-1/blob/main/088%20DNS%20Purin%20((%E2%80%A2%CB%8B%20_%20%CB%8A%E2%80%A2))/catetcresolv.conf.png?raw=true)
 
-คำสั่งที่ใช้ได้เป็นดังนี้:
-```
-# ใช้ nslookup
-# nslookup example.com
+ip DNS จะอยู่ที่ **nameserver**
 
-[root@servera ~] # nslookup servera.example.com
-  Server: 192.168.25.132
-  Address: 192.168.25.132#53
-  Name: servera.example.com
-  Address: 192.168.25.132
+หรือ ใช้ command `nslookup` ตามด้วยชื่อ website
 
-[root@servera ~] # nslookup 192.168.25.132 
-   132.25.168.192.in-addr.arpa name = servera.example.com.
+![alt text](https://github.com/LowEyeQ/Network-1/blob/main/088%20DNS%20Purin%20((%E2%80%A2%CB%8B%20_%20%CB%8A%E2%80%A2))/nslookup.png?raw=true)
 
-# ใช้ dig
-# dig example.com
+ip DNS จะอยู่ที่ **server**
 
-[root@servera ~] # dig servera.example.com
-   ...output truncated...
+## การตรวจสอบว่า DNS ทำงานได้ไหม
 
-;; ANSWER SECTION:
-servera.example.com. 86400 IN A 192.168.25.132
+สามารถทดสอบด้วยการ ping หรือ traceroute ไปที่ website
 
+![alt text](https://github.com/LowEyeQ/Network-1/blob/main/088%20DNS%20Purin%20((%E2%80%A2%CB%8B%20_%20%CB%8A%E2%80%A2))/ping.png?raw=true)
 
-;; AUTHORITY SECTION:
-example.com. 86400 IN NS servera.example.com.
+จากรูปคือการ ping ไปที่ตัวเอง ถ้าเกิด ping สำเร็จ จะแปลงจากชื่อ domain name เป็น ip address ได้
 
-...output truncated...
+## การตรวจสอบค่า hostname
 
-```
+ตรวจสอบ Hostname โดยใช้ command `hostname`
+![alt text](https://github.com/LowEyeQ/Network-1/blob/main/088%20DNS%20Purin%20((%E2%80%A2%CB%8B%20_%20%CB%8A%E2%80%A2))/hostname..png?raw=true)
+
 ## Reference
 
 redhat
 
-chatGPT
+https://www.jodoi.com/book/network-command_3.pdf
+
+แปลภาษาและข้อมูลเพิ่มเติม : chatGPT
