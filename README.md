@@ -22,5 +22,5 @@ Computer networking เป็นการทำให้คอมพิวเต
 ## สิ่งที่เหมือนหรือใกล้เคียงกัน
 สิ่งที่ 8 Key Subcomponent of Focus มีเหมือนหรือใกล้เคียงกันบน Linux คือการแสดงข้อมูล และกำหนดค่าเครือข่าย
 
-##Reference
+## Reference
 - https://www.oreilly.com/library/view/linux-networking-cookbook/9780596102487/ch01.html
