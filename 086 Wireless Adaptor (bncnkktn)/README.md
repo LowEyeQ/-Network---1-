@@ -54,6 +54,4 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
    link/ether 48:5d:60:2a:ab:10 brd ff:ff:ff:ff:ff:ff
 ```
 
- `lo` คือ อินเทอร์เฟซแบบ loopback
-`enp0s25` คือ อินเทอร์เฟซ Ethernet
-`wlp3s0` คือ อินเทอร์เฟซ wireless
+ `lo` คือ อินเทอร์เฟซแบบ loopback, `enp0s25` คือ อินเทอร์เฟซ Ethernet, `wlp3s0` คือ อินเทอร์เฟซ wireless
