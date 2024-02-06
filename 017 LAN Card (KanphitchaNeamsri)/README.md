@@ -29,7 +29,7 @@ Typical Ethernet NIC PCI card
 
 
 
-source : [http://www.yolinux.com/TUTORIALS/LinuxTutorialNetworking-Add_NIC.html](http://www.yolinux.com/TUTORIALS/LinuxTutorialNetworking-Add_NIC.html).
+source : [http://www.yolinux.com/TUTORIALS/LinuxTutorialNetworking-Add_NIC.html](https://www.google.com/url?sa=i&url=https%3A%2F%2Ftechterms.com%2Fdefinition%2Fnic&psig=AOvVaw1x9hKX3drRSx18qeTLsBYc&ust=1707305122062000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNif8a7NloQDFQAAAAAdAAAAABAQ).
 
 ## การเพิ่ม NIC ใน Linux Networking
 โดยทั่วไปแล้ว การ์ดเครือข่ายอีเธอร์เน็ต (Ethernet network interface) จะถูกติดตั้งไว้ภายในเมนบอร์ดของคอมพิวเตอร์รุ่นใหม่ส่วนใหญ่ โดยเฉพาะอย่างยิ่งสำหรับระบบเซิร์ฟเวอร์ ซึ่งมักจะมีการ์ดเครือข่ายติดตั้งอยู่ภายในเมนบอร์ดจำนวนสองอัน นอกจากนี้ ยังสามารถติดตั้งการ์ดเครือข่ายเพิ่มเติมลงในสล็อตเสริม PCI ได้อีกด้วย
@@ -169,8 +169,51 @@ restart network :
     
     - อาจจะทำให้ระบบทำงานผิดพลาดได้
 
+### - Example How to Configure Networking on Ubuntu with Netplan
+1. ขั้นแรก ค้นหาชื่อของอินเทอร์เฟซเครือข่ายที่ใช้งานอยู่ที่คุณต้องการกำหนดค่า โดยให้รันคำสั่งต่อไปนี้:
+
+        $ ip a
+
+1. ไฟล์การกำหนดค่าเริ่มต้นของ Netplan อยู่ภายใต้ไดเร็กทอรี/etc/netplanคุณจะพบว่าใช้คำสั่งต่อไปนี้:
+
+        $ ls /etc/netplan/
+
+1. หากต้องการดูเนื้อหาของไฟล์การกำหนดค่าเครือข่าย Netplan ให้รันคำสั่งต่อไปนี้:
+
+        $ cat /etc/netplan/*.yaml
+
+1. เปิดไฟล์การ configuration file ในที่นี้ใช้ Nano เพื่อแก้ไขไฟล์การกำหนดค่า ดังนั้นจึงเรียกใช้:
+
+        $ sudo nano /etc/netplan/*.yaml
+
+1.  อัปเดตไฟล์การกำหนดค่าตามความต้องการด้านเครือข่าย สำหรับการกำหนดที่อยู่ IP แบบ static เพิ่มที่อยู่ IP, Gateway, DNS ในขณะที่แบบ dinamic ม่จำเป็นต้องเพิ่มข้อมูลนี้เนื่องจากจะได้รับข้อมูลนี้จากเซิร์ฟเวอร์ DHCP โดยให้รันคำสั่งต่อไปนี้:
+
+        network:
+            Version: 2
+            Renderer: NetworkManager/ networkd
+            ethernets:
+            DEVICE_NAME:
+                Dhcp4: yes/no
+                Addresses: [IP_ADDRESS/NETMASK]
+                Gateway: GATEWAY
+                Nameservers:
+                    Addresses: [NAMESERVER_1, NAMESERVER_2]
+
+โดยที่
+* DEVICE_NAME: ชื่อ interface.
+* Dhcp4: "yes" or "no" ขึ้นอยู่กับการกำหนดที่อยู่ IP แบบ dynamic or static
+* Addresses: IP address ในรูป prefix notation. อย่าใช้ netmask.
+* Gateway: ที่อยู่ IP ของ Gateway เพื่อเชื่อมต่อกับเครือข่ายภายนอก
+* Nameservers: ที่อยู่ของ DNS name servers
+
+-ข้อควรระวัง-
+**YAML ค่อนข้างเข้มงวดในการเยื้อง ใช้ช่องว่างในการเยื้อง ไม่ใช่แท็บ มิฉะนั้นคุณจะพบข้อผิดพลาด**
+
+
 ## เพิ่มเติม
 * Network Interface Card (NIC) : หมายถึง การ์ดใดๆ ที่ทำหน้าที่เชื่อมต่อคอมพิวเตอร์กับเครือข่าย โดยไม่จำเป็นต้องระบุเทคโนโลยีที่ใช้
 
 ## Source เนื้อหา
 * http://www.yolinux.com/TUTORIALS/LinuxTutorialNetworking-Add_NIC.html
+* https://vitux.com/how-to-configure-networking-with-netplan-on-ubuntu/
+
