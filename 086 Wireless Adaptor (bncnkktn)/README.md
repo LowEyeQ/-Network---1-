@@ -80,3 +80,7 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
 ```
+
+ในตัวอย่างนี้ `enp0s3` อินเทอร์เฟซ Ethernet และ `lo` อินเทอร์เฟซแบบ loopback 
+
+เอาต์พุตประกอบด้วยข้อมูล เช่น อินเทอร์เฟซ flag, ที่อยู่ IP (ทั้ง IPv4 และ IPv6), ที่อยู่ MAC, MTU (Maximum Transmission Unit) และ packet statistics.
