@@ -161,3 +161,10 @@ check status ของ eth2
 ```bash
 "operstate": "up",
 ```
+## Soruce/Reference
+(https://www.tecmint.com/ip-command-examples/)
+(https://www.cyberciti.biz/faq/linux-ip-command-examples-usage-syntax/)
+([https://www.tecmint.com/ip-command-examples/](https://www.ibm.com/docs/en/power9/0009-ESS?topic=notebook-setting-ip-address-in-linux)https://www.ibm.com/docs/en/power9/0009-ESS?topic=notebook-setting-ip-address-in-linux)
+(https://www.geeksforgeeks.org/ifconfig-command-in-linux-with-examples/)
+(https://www.linode.com/docs/guides/how-to-use-the-linux-ip-command/)
+(https://www.javatpoint.com/linux-ip)
