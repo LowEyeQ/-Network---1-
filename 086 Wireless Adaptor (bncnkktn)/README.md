@@ -158,7 +158,7 @@ phy#0
 ______
 ------
 References:
-* <a href="https://th.linux-console.net/?p=342" /></a>
-* https://th.linux-console.net/?p=342
+* <a href="https://th.linux-console.net/?p=342" />https://th.linux-console.net/?p=342</a>
+* fdsfdsfs
 
 
