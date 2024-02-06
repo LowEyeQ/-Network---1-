@@ -91,7 +91,6 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
 
 สามารถใช้เพื่อเชื่อมต่อกับเครือข่าย Wi-Fi ด้วย SSID และรหัสผ่านที่ระบุได้ดังนี้:
    
-   ตัวอย่างเช่น:
 ```nmcli device wifi connect <SSID> password <password>```
 
 แทนที่ <SSID> ด้วยชื่อ (SSID) ของเครือข่าย WiFi ที่ต้องการเชื่อมต่อ และ <password> ด้วยรหัสผ่านสำหรับเครือข่าย
