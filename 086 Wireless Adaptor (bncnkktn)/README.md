@@ -159,6 +159,6 @@ ______
 ------
 References:
 * <a href="https://th.linux-console.net/?p=342" />https://th.linux-console.net/?p=342</a>
-* [https://www.tp-link.com/ae/blog/378/](https://www.tp-link.com/ae/blog/378/what-is-a-wifi-adapter-and-how-to-pick-the-best-one-for-you-/#:~:text=A%20WiFi%20adapter%20allows%20your,to%20the%20latest%20WiFi%20generation.)https://www.tp-link.com/ae/blog/378/what-is-a-wifi-adapter-and-how-to-pick-the-best-one-for-you-/#:~:text=A%20WiFi%20adapter%20allows%20your,to%20the%20latest%20WiFi%20generation.
+* [https://www.tp-link.com/ae/blog/378/](https://www.tp-link.com/ae/blog/378/what-is-a-wifi-adapter-and-how-to-pick-the-best-one-for-you-/#:~:text=A%20WiFi%20adapter%20allows%20your,to%20the%20latest%20WiFi%20generation.)
 
 
