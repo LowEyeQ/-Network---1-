@@ -29,7 +29,7 @@ Computer networking เป็นการทำให้คอมพิวเต
 |**65070033**| นางสาว จินดามณี  จิรสรวงเกษม | Routing | ![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/Other/pic_of_samachick/50.jpg?raw=true) |
 |**65070037**| นาย จิรัฎฐวัฒน์  อัศวโกศลปภา | IP Setup | ![Alt text](https://raw.githubusercontent.com/LowEyeQ/Network-1/main/037%20IP%20Setup%20(LowEyeQ)/65070037.jpg?raw=true) |
 |**65070050**| นางสาว ชาลิสา  สันติธัญญาโชค | Aircard Adaptor | ![Alt text]() |
-|**65070057**| นางสาว ฐิตารีย์  รวิชุติวรรณ | Gateway | ![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/057%20Gateway%20(Titaree-Ravi)/65070057.jpg)(width=300) |
+|**65070057**| นางสาว ฐิตารีย์  รวิชุติวรรณ | Gateway | ![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/057%20Gateway%20(Titaree-Ravi)/65070057.jpg) |
 |**65070086**| นางสาว ณิชนันท์  กิมเกถนอม | Wireless Adaptor | ![Alt text]() |
 |**65070088**| นางสาว ปุรินปรัชญ์  อาษานอก | Interface Devices และ DNS | ![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/088%20DNS%20Purin%20((%E2%80%A2%CB%8B%20_%20%CB%8A%E2%80%A2))/65070088.jpg?raw=true)
 |
