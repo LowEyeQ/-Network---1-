@@ -10,7 +10,7 @@
 Computer networking เป็นการทำให้คอมพิวเตอร์สื่อสารกัน และการจัดการเครือข่ายของระบบคอมพิวเตอร์ ในหัวข้อนี้จะมองดูระบบเครือข่าย Ethernet กับ Linux จากองค์ประกอบต่างๆ ที่ทำให้มันทำงาน: Interface Devices, LAN Card, Wireless Adaptor, Aircard Adaptor, IP Setup, Routing, Gateway และ DNS
 
 ## Key Subcomponent of Focus
-- Interface Devices : ดูข้อมูลและสามารถตรวจสอบ network interfaces รวมทั้งดูเอกสารคำสั่งและความช่วยเหลือ
+- [Interface Devices](https://github.com/LowEyeQ/Network-1/tree/main/088%20Interface%20Devices%20(Purin%20(%E2%80%A2%CB%8B%20_%20%CB%8A%E2%80%A2))) : ดูข้อมูลและสามารถตรวจสอบ network interfaces รวมทั้งดูเอกสารคำสั่งและความช่วยเหลือ
 - LAN Card : 
 - Wireless Adaptor
 - Aircard Adaptor
