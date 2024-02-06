@@ -15,7 +15,7 @@ Computer networking เป็นการทำให้คอมพิวเต
 - [Wireless Adaptor](https://github.com/LowEyeQ/Network-1/tree/main/086%20Wireless%20Adaptor%20(bncnkktn)) : 
 - [Aircard Adaptor](https://github.com/LowEyeQ/Network-1/tree/main/050%20Aircard%20Adaptor%20(Chalisa%20Suntithanyachok)) : 
 - [IP Setup](https://github.com/LowEyeQ/Network-1/tree/main/037%20IP%20Setup%20(LowEyeQ)) : เครื่องมือสำคัญสำหรับการกำหนดค่าเครือข่าย ช่วยให้ผู้ใช้สามารถกำหนดค่าต่างๆ เช่น IP address, subnet mask, และค่าอื่นๆ ที่จำเป็นสำหรับการเชื่อมต่อกับเครือข่าย
-- [Routing](https://github.com/LowEyeQ/Network-1/tree/main/033%20Routing%20(J-Jindamanee)) : 
+- [Routing](https://github.com/LowEyeQ/Network-1/tree/main/033%20Routing%20(J-Jindamanee)) : กระบวนการของการเลือกเส้นทางในเครือข่ายต่างๆ เพื่อส่งข้อมูลจากแหล่งต้นทางไปยังปลายทาง
 - [Gateway](https://github.com/LowEyeQ/Network-1/tree/main/057%20Gateway%20(Titaree-Ravi)) : ตัวกลางที่เชื่อมต่อระบบเครือข่ายภายในเครื่อง Linux กับเครือข่ายภายนอก โดยทำหน้าที่เป็นตัวกลางในการส่งข้อมูล และสามารถอนุญาตให้คอมพิวเตอร์ในเครือข่ายท้องถิ่นเข้าถึงทรัพยากรบนอินเทอร์เน็ตได้
 - [DNS](https://github.com/LowEyeQ/Network-1/tree/main/088%20DNS%20Purin%20((%E2%80%A2%CB%8B%20_%20%CB%8A%E2%80%A2))) : ระบบที่ใช้แปลงชื่อโดเมนเป็นที่อยู่ IP และช่วยให้ระบบเครือข่ายทำงานได้อย่างมีประสิทธิภาพและเป็นระบบ
 
