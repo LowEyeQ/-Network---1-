@@ -11,7 +11,7 @@ Computer networking เป็นการทำให้คอมพิวเต
 
 ## Key Subcomponent of Focus
 - [Interface Devices](https://github.com/LowEyeQ/Network-1/tree/main/088%20Interface%20Devices%20(Purin%20(%E2%80%A2%CB%8B%20_%20%CB%8A%E2%80%A2))) : ดูข้อมูลและสามารถตรวจสอบ network interfaces รวมทั้งดูเอกสารคำสั่งและความช่วยเหลือ
-- [LAN Card](https://github.com/LowEyeQ/Network-1/tree/main/017%20LAN%20Card%20(KanphitchaNeamsri)) : การ์ดเครือข่ายที่ใช้เทคโนโลยีอีเธอร์เน็ต (Ethernet) ในการเชื่อมต่อกับเครือข่ายท้องถิ่น (LAN)
+- [LAN Card](https://github.com/LowEyeQ/Network-1/tree/main/017%20LAN%20Card%20(KanphitchaNeamsri)) : ตัวกลางในการเชื่อมต่อระหว่างคอมพิวเตอร์ที่ใช้ Linux กับเครือข่ายข้อมูล ช่วยให้คอมพิวเตอร์สามารถระบุตัวตนและติดต่อสื่อสารกับอุปกรณ์อื่นๆ บนเครือข่ายได้
 - [Wireless Adaptor](https://github.com/LowEyeQ/Network-1/tree/main/086%20Wireless%20Adaptor%20(bncnkktn)) : 
 - [Aircard Adaptor](https://github.com/LowEyeQ/Network-1/tree/main/050%20Aircard%20Adaptor%20(Chalisa%20Suntithanyachok)) : 
 - [IP Setup](https://github.com/LowEyeQ/Network-1/tree/main/037%20IP%20Setup%20(LowEyeQ)) : เครื่องมือสำคัญสำหรับการกำหนดค่าเครือข่าย ช่วยให้ผู้ใช้สามารถกำหนดค่าต่างๆ เช่น IP address, subnet mask, และค่าอื่นๆ ที่จำเป็นสำหรับการเชื่อมต่อกับเครือข่าย
