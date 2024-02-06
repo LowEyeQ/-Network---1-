@@ -18,20 +18,14 @@ Gateway บน Linux ทำงานโดยใช้หลักการข�
 > [!NOTE]  
 > ใช้ ```ip route``` หรือ ```ip r``` แทน ```ifconfig``` ได้
 
-![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/20200512170105/To-get-details-of-the-kernel-IP-routing-table-using-ip-command1.png)
-
-source : https://www.geeksforgeeks.org/route-command-in-linux-with-examples/
+![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/057%20Gateway%20(Titaree-Ravi)/Screenshot%202024-02-06%20202019.png)
 
 ## วิธีตรวจสอบที่อยู่ Gateway ip ด้วย route command บน Linux
 คำสั่ง ```route``` สามารถใช้ตรวจสอบที่อยู่ gateway ip
-![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/20200512153722/To-display-the-IP-kernel-routing-table.png)
-
-source : https://www.geeksforgeeks.org/route-command-in-linux-with-examples/
+![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/057%20Gateway%20(Titaree-Ravi)/Screenshot%202024-02-06%20202757.png)
 
 สามารถแสดงตารางเส้นทางในรูปแบบตัวเลขเต็ม โดย ```route -n```
-![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/20200512153837/To-display-routing-table-in-full-numeric-form.png)
-
-source : https://www.geeksforgeeks.org/route-command-in-linux-with-examples/
+![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/057%20Gateway%20(Titaree-Ravi)/Screenshot%202024-02-06%20202834.png)
 
 จะแสดงเส้นทางทั้งหมดที่กำหนดค่าในระบบ 
 U หมายถึงเส้นทาง 'up' และ 
@@ -42,9 +36,7 @@ G บ่งบอกว่านั่นคือ Gateway
 
 ## วิธีหา Gateway ip ด้วยคำสั่ง netstat ใน Linux
 คำสั่ง ```netstat``` ใช้ดูทุกการเชื่อมต่อเครือข่ายที่ทำงานบนระบบเพื่อหา Gateway โดย Gateway จะปรากฎในคอลัมน์ "Gateway"
-![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/kernel.png)
-
-source : https://www.geeksforgeeks.org/netstat-command-linux/
+![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/057%20Gateway%20(Titaree-Ravi)/Screenshot%202024-02-06%20202928.png)
 
 Netstat จะแสดงการเชื่อมต่อเครือข่ายทั้งหมดที่ทำงานและสถานะของพวกมัน
 
@@ -62,9 +54,8 @@ Netstat จะแสดงการเชื่อมต่อเครือข
 
 จะใช้คำสั่งต่อไปนี้: ```route add defualt gw 192.168.1.1```
 
-![Alt text](https://lintut.com/wp-content/uploads/2015/01/Add-Default-Gateway.png)
-
-source : https://lintut.com/how-to-use-route-command-on-rhelcentos-linux/
+    Destination  Gateway      Genmask         Flags Metric Ref    Use Iface
+    0.0.0.0      192.168.1.1  0.0.0.0         UG    0      0        0 eth0
 
 ## วิธีการกำหนดค่า Gateway Linux ด้วย Iptables
 ```iptables``` สามารถใช้ในการกำหนดค่า Gateway NAT ถูกใช้ในการแปลงที่อยู่ IP สาธารณะเป็นที่อยู่ IP ส่วนตัว ซึ่งช่วยให้อุปกรณ์หลายตัวสามารถแบ่งปันที่อยู่ IP สาธารณะเดียวได้ เป็นประโยชน์ในการรักษาความปลอดภัยของเครือข่ายภายในในขณะที่ยังอนุญาตการเข้าถึงจากภายนอก โดยมีขั้นตอนดังนี้
