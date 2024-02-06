@@ -205,7 +205,8 @@ ip DNS จะอยู่ที่ **server**
 
 ตรวจสอบ Hostname โดยใช้ command `hostname`
 ![alt text](https://github.com/LowEyeQ/Network-1/blob/main/088%20DNS%20Purin%20((%E2%80%A2%CB%8B%20_%20%CB%8A%E2%80%A2))/hostname..png?raw=true)
-
+## ข้อควรระวัง
+การแก้ไขการตั้งค่า DNS อาจต้องใช้สิทธิ์ root หรือสิทธิ์แอดมิน ดังนั้นควรระมัดระวังในการทำเพื่อป้องกันไม่ให้เกิดความผิดพลาดที่ไม่พึงประสงค์
 ## Reference
 
 redhat
