@@ -156,6 +156,9 @@ phy#0
 `channel` ระบุช่องการทำงานและความถี่
 `txpower` คือ กำลังส่งของอินเทอร์เฟซ
 ______
-
+------
+References:
+* <a href="https://th.linux-console.net/?p=342" /></a>
+* https://th.linux-console.net/?p=342
 
 
