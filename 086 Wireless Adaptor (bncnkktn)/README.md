@@ -3,6 +3,7 @@
   Wireless Adapter หรือ Wireless USB Adapter คืออุปกรณ์ที่ใช้สำหรับเชื่อมต่อกับเครือข่ายคอมพิวเตอร์แบบไร้สาย หรือเรียกง่าย ๆ ว่า ตัวรับสัญญาณไวไฟ จำเป็นต้องใช้งานกับจุดที่มีเราท์เตอร์ปล่อยสัญญาณไวไฟ เน้นใช้งานร่วมกับคอมพิวเตอร์ โดยวิธีการใช้งานเพียงแค่เชื่อมต่อผ่านพอร์ต USB ก็สามารถรับสัญญาณไวไฟได้ทันที ไม่สามารถปล่อยสัญญาณไปให้อุปกรณ์อื่น ๆ
 
 ![image](https://www.dlink.co.th/wp-content/uploads/2021/07/DWA-185-2.jpg)
+
 (source : https://www.tp-link.com/ae/blog/378/what-is-a-wifi-adapter-and-how-to-pick-the-best-one-for-you-/#:~:text=A%20WiFi%20adapter%20allows%20your,to%20the%20latest%20WiFi%20generation.)
 
 ## Wireless Adapter เหมาะกับใคร
