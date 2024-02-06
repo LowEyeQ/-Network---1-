@@ -6,3 +6,5 @@
 
 ![image](https://github.com/LowEyeQ/Network-1/assets/109953773/2a64e543-b186-4e60-90a2-91b838c6ba90)
 
+
+#ชื่อเรียกอื่นๆ ของ Aircard adaptor
