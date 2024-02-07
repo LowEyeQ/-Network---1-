@@ -44,6 +44,7 @@ G หมายถึง Gateway
 
 ## วิธีหา Gateway ip ด้วยคำสั่ง netstat ใน Linux
 คำสั่ง ```netstat``` ใช้ดูทุกการเชื่อมต่อเครือข่ายที่ทำงานบนระบบเพื่อหา Gateway โดย Gateway จะปรากฎในคอลัมน์ "Gateway"
+
 ![Alt text](https://github.com/LowEyeQ/Network-1/blob/main/057%20Gateway%20(Titaree-Ravi)/Screenshot%202024-02-06%20202928.png)
 
 Netstat จะแสดงการเชื่อมต่อเครือข่ายทั้งหมดที่ทำงานและสถานะของพวกมัน
