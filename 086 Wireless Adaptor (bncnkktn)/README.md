@@ -155,12 +155,18 @@ phy#0
 `type` ระบุโหมดของอินเทอร์เฟซ (เช่น จัดการ มอนิเตอร์)
 `channel` ระบุช่องการทำงานและความถี่
 `txpower` คือ กำลังส่งของอินเทอร์เฟซ
-______
-------
+  ______
+หากต้องการแสกนหา Access Point ถ้า Access Point ที่เราจะเอา USB Wireless LAN ไปต่อนั้นมีการเข้ารหัสแบบ WPA/WPA2 เราจะต้องติดตั้ง wpa_supplicant เพิ่มเติมด้วย เพื่อทำหน้าที่เป็น WPA Client จะได้รองรับ WPA-PSK (WPA Personal) และ WPA2-PSK (WPA2 Personal) นอกจากนั้น wpa_supplicant ยังรองรับ WPA-EAP (IEEE 802.1X) ด้วย
+ติดตั้ง wpa_supplicant รันคำสั่ง `apt-get install wpasupplicant` 
+
+  ______
 References:
 * <a href="https://th.linux-console.net/?p=342" />https://th.linux-console.net/?p=342</a>
 * <a href="https://www.tp-link.com/ae/blog/378/what-is-a-wifi-adapter-and-how-to-pick-the-best-one-for-you-/#:~:text=A%20WiFi%20adapter%20allows%20your,to%20the%20latest%20WiFi%20generation." />https://www.tp-link.com/ae/blog/378/</a>
 * <a href="https://unix.stackexchange.com/questions/92799/connecting-to-wifi-network-through-command-line" />https://unix.stackexchange.com/questions/92799/</a>
+* <a href="http://voip4share.com/topic3592.html" />http://voip4share.com/topic3592.html</a>
+
+
 
 
 
